@@ -1,32 +1,46 @@
 body > .container {
-  padding-top: 32px;
-  max-width: 720px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    max-width: 720px;
 }
 
 #avatar img {
-  width: 64px;
-  height: 64px;
-  float: right;
-  margin-top: 16px;
+    width: 64px;
+    height: 64px;
+    float: right;
+    margin-top: 16px;
 }
+
 body > .container .row {
-  margin-bottom: 32px;
+    margin-bottom: 48px;
 }
 
 .row.right {
-  text-align: right;
+    text-align: right;
 }
 
 .tech-logo {
-  max-width: 96px;
-  max-height: 48px;
+    max-width: 96px;
+    max-height: 48px;
 }
 
 #location_map iframe {
-  width: 100%;
+    width: 100%;
 }
 
-.employer-logo img {
-  width: 50%;
-  height: auto;
+.logo a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+}
+
+h3 {
+    margin-top: 0px;
 }
