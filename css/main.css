@@ -3,8 +3,8 @@ body {
 }
 
 body > .container {
-    padding-top: 3.6rem;
-    padding-bottom: 3.6rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
 }
 
 img#avatar {
@@ -28,15 +28,11 @@ img.tech-logo-large {
 }
 
 .row {
-    margin-top: 2.0rem;
+    margin-top: 2.4rem;
 }
 
 #location-map {
     width: 85%;
-}
-
-.righty {
-    text-align: right;
 }
 
 ul {
@@ -45,6 +41,12 @@ ul {
 
 ul li {
     font-size: 1.4rem;
+}
+
+#hi small a {
+    display: block;
+    float: left;
+    margin-right: 1.6rem;
 }
 
 /*body > .container .row {*/
