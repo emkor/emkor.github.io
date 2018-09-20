@@ -1391,7 +1391,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>List of UUIDs (task IDs) from received requests</p>
+                      <p>List of task IDs from received requests</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1454,7 +1454,7 @@
                 <section>
                   <h5>Request Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string (uuid)&quot;</span>,
+  <span class="hljs-attr">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;string (uuid)&quot;</span>,
   <span class="hljs-attr">&quot;audio_file_name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;plugin_full_key&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;plugin_config&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -1536,7 +1536,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Returns details of extraction request selected by UUID (task ID)</p>
+                  <p>Returns details of extraction request selected by task ID</p>
                 </section>
               </div>
             </div>
@@ -1608,7 +1608,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>There is no extraction request with task_id (UUID) provided in URL</p>
+                      <p>There is no extraction request with task_id provided in URL</p>
                     </div>
                   </div>
                 </section>
@@ -1679,7 +1679,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Details extraction request selected by UUID (task ID)</p>
+                  <p>Details extraction request selected by task ID</p>
                 </section>
               </div>
             </div>
@@ -1751,7 +1751,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>There is no extraction request with task_id (UUID) provided in URL</p>
+                      <p>There is no extraction request with task_id provided in URL</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -1825,7 +1825,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Returns status of extraction request task selected by UUID (task ID)</p>
+                  <p>Returns status of extraction request task selected by task ID</p>
                 </section>
               </div>
             </div>
@@ -1880,7 +1880,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Required parameter UUID (task_id) was not provided</p>
+                      <p>Required parameter task_id was not provided</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -1894,7 +1894,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Requested task status is not known, which means that either there was no request with given UUID (task_id), or the task did not execute yet</p>
+                      <p>Requested task status is not known, which means that either there was no request with given task_id, or the task did not execute yet</p>
                     </div>
                   </div>
                 </section>
@@ -2001,7 +2001,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Required parameter UUID (task_id) was not provided</p>
+                      <p>Required parameter task_id was not provided</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2015,7 +2015,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Could not find feature meta-information for given task_id (UUID)</p>
+                      <p>Could not find feature meta-information for given task_id</p>
                     </div>
                   </div>
                 </section>
@@ -2119,7 +2119,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Required parameter UUID (task_id) was not provided</p>
+                      <p>Required parameter task_id was not provided</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2133,7 +2133,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Could not find feature meta-information for given task_id (UUID)</p>
+                      <p>Could not find feature meta-information for given task_id</p>
                     </div>
                   </div>
                 </section>
@@ -2229,7 +2229,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Required parameter UUID (task_id) was not provided</p>
+                      <p>Required parameter task_id was not provided</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2243,7 +2243,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Could not find feature extraction statistics information for given task_id (UUID)</p>
+                      <p>Could not find feature extraction statistics information for given task_id</p>
                     </div>
                   </div>
                 </section>
@@ -2348,7 +2348,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Required parameter UUID (task_id) was not provided</p>
+                      <p>Required parameter task_id was not provided</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2362,7 +2362,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Could not find feature extraction statistics for given task_id (UUID)</p>
+                      <p>Could not find feature extraction statistics for given task_id</p>
                     </div>
                   </div>
                 </section>
@@ -2461,7 +2461,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Required parameter UUID (task_id) was not provided</p>
+                      <p>Required parameter task_id was not provided</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2475,7 +2475,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Could not find feature extraction data information for given task_id (UUID)</p>
+                      <p>Could not find feature extraction data information for given task_id</p>
                     </div>
                   </div>
                 </section>
@@ -2571,7 +2571,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Required parameter UUID (task_id) was not provided</p>
+                      <p>Required parameter task_id was not provided</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2585,7 +2585,7 @@
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>Could not find feature extraction statistics for given task_id (UUID)</p>
+                      <p>Could not find feature extraction statistics for given task_id</p>
                     </div>
                   </div>
                 </section>
@@ -2962,7 +2962,7 @@
                   </h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">[
   {
-    <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string (uuid)&quot;</span>,
+    <span class="hljs-attr">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;string (uuid)&quot;</span>,
     <span class="hljs-attr">&quot;audio_file_name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;plugin_full_key&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;plugin_config&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -3355,8 +3355,8 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="uuid">
-                      <span class="json-property-name">uuid:</span>
+                    <dt data-property-name="task_id">
+                      <span class="json-property-name">task_id:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-format">(uuid)</span>
                       <span class="json-property-range" title="Value limits"></span>
@@ -3390,7 +3390,7 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string (uuid)&quot;</span>,
+  <span class="hljs-attr">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;string (uuid)&quot;</span>,
   <span class="hljs-attr">&quot;audio_file_name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;plugin_full_key&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;plugin_config&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
