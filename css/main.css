@@ -43,6 +43,10 @@ ul {
     margin-left: 1.6rem;
 }
 
+ul li {
+    font-size: 1.4rem;
+}
+
 /*body > .container .row {*/
     /*margin-bottom: 48px;*/
 /*}*/
