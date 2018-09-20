@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>emkor personal site</title>
-    <meta name="description" content="">
+    <title>hi! I'm emkor</title>
+    <meta name="keywords" content="emkor personal site software engineer developer development audiopyle openstack"/>
+    <meta name="description" content="emkor's personal site, software engineer">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <script src="js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/milligram.min.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
@@ -19,112 +19,160 @@
 <div class="container">
     <!-- HELLO -->
     <div class="row">
-        <div class="col-xs-10">
+        <div class="column column-66">
             <h1>hi! I'm emkor</h1>
-            <h3>(Mateusz Korzeniowski)</h3>
-            <p>Contact me at <a href="mailto:emkor93@gmail.com">emkor93@gmail.com</a></p>
         </div>
-        <div id="avatar" class="col-xs-2"><img src="img/avatar.jpg" class="img-rounded"></div>
+        <div class="column column-33"><img id="avatar" src="img/avatar.jpg"></div>
     </div>
 
     <!-- SOFTWARE DEVELOPER -->
     <div class="row">
-        <div class="col-sm-6">
+        <div class="column column-33">
             <div class="row">
-                <div class="col-xs-6"><img class="tech-logo"
-                                           src="img/python-logo-master-v3-TM.png">
+                <div class="column column-50"><img class="tech-logo"
+                                                   src="img/python-logo-master-v3-TM.png">
                 </div>
-                <div class="col-xs-6"><img class="tech-logo"
-                                           src="img/docker_horizontal.png"></div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6"><img class="tech-logo"
-                                           src="img/logo-mysql-170x115.png"></div>
-
-                <div class="col-xs-6"><img class="tech-logo"
-                                           src="img/Java-logo.jpg">
-                </div>
+                <div class="column column-50"><img class="tech-logo"
+                                                   src="img/docker_horizontal.png"></div>
             </div>
 
             <div class="row">
-                <div class="col-xs-6"><img class="tech-logo"
-                                           src="img/OpenStack-Logo-Vertical.png">
+                <div class="column column-50"><img class="tech-logo"
+                                                   src="img/OpenStack-Logo-Vertical.png">
                 </div>
-                <div class="col-xs-6"><img class="tech-logo"
-                                           src="img/bash_full_colored_dark.png"></div>
+                <div class="column column-50"><img class="tech-logo"
+                                                   src="img/bash_full_colored_dark.png"></div>
+            </div>
+
+            <div class="row">
+                <div class="column column-50"><img class="tech-logo"
+                                                   src="img/logo-mysql-170x115.png"></div>
+
+                <div class="column column-50"><img class="tech-logo" style="margin-top: 0.6rem"
+                                                   src="img/Java-logo.jpg">
+                </div>
             </div>
 
         </div>
-        <div class="col-sm-6">
-            <h3>software developer</h3>
-            <p>with >4 years of experience</p>
-            <p>mostly in Python, with some DevOps skills and little bit of Java</p>
+        <div class="column column-66">
+            <h2>software developer</h2>
+            <p>coding since I got PC,<br/>coding for living - since 2013</p>
+            <p>
+                <small><em><- let's hope Oracle won't sue me for using Java logo</em></small>
+            </p>
+            <div class="row">
+                <div class="column column-33">
+                    <p>skilled with</p>
+                    <ul>
+                        <li>Python
+                            <small>Celery, Flask</small>
+                        </li>
+                        <li>OOP
+                            <small>clean code</small>
+                        </li>
+                        <li>REST APIs</li>
+                        <li>DevOps
+                            <small>OpenStack, Docker</small>
+                        </li>
+                        <li>SQL
+                            <small>patterns, MySQL</small>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column-33">
+                    <p>basics of</p>
+                    <ul>
+                        <li>Java
+                            <small>vert.x, little bit of Spring</small>
+                        </li>
+                        <li>Linux
+                            <small>administration</small>
+                        </li>
+                        <li>JavaScript
+                            <small>node.js, npm</small>
+                        </li>
+                        <li>Front-end
+                            <small>HTML5, CSS3</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>
+                <small><em>yup, almost full-stack!</em></small>
+            </p>
         </div>
     </div>
 
     <!-- LOCATED AT -->
     <div class="row">
-        <div class="col-sm-6">
-            <h3>located at Wrocław, Poland</h3>
-            <p>Eastern European Time (EET)</p>
-            <p>UTC +1:00 / +2:00 (Daylight Saving Time)</p>
-        </div>
-        <div id="location_map" class="col-sm-6">
-            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        <div class="column column-33">
+            <iframe id="location-map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=-11.733398437500002%2C39.19820534889482%2C45.6591796875%2C60.6301017662667&amp;layer=mapnik&amp;marker=51.126475253705244%2C16.948814392089844"
                     style="border: 1px solid black"></iframe>
             <br/>
             <small><a href="https://www.openstreetmap.org/?mlat=51.126&amp;mlon=16.949#map=5/51.126/16.949">Show full
                 map</a></small>
         </div>
+        <div class="column column-66">
+            <h2>located in Wrocław, Poland</h2>
+            <p>Eastern European Time (EET)</p>
+        </div>
+
     </div>
 
     <!-- EMPLOYED AT -->
     <div class="row">
-        <div class="col-sm-6">
-            <a href="https://www.nokia.com/en_int"><img
-                    src="img/nokia_logo_blue.png"></a>
+        <div class="column column-33">
+            <img class="tech-logo-large" src="img/nokia_logo_blue.png">
         </div>
-        <div class="col-sm-6">
-            <h3>employed at Nokia</h3>
-            <p>as a software engineer (regular level)</p>
-            <p>since 2015</p>
+        <div class="column column-66">
+            <h2>employed by Nokia</h2>
+            <p>as a software engineer (regular developer level)</p>
+            <p>since May 2015</p>
         </div>
     </div>
 
     <!-- FOSS PROJECTS -->
     <div class="row">
-        <div class="col-sm-6">
-            <h3>open source projects</h3>
-            <p><a href="https://github.com/emkor/audiopyle">audiopyle</a> - audio files feature extraction</p>
-            <p><a href="https://github.com/emkor/openstack-on-hp-z600">OpenStack @ HP Z600</a> - example installation
-                procedure of OpenStack on dedicated machine</p>
-        </div>
-        <div class="col-sm-6">
+        <div class="column column-33">
             <div class="row">
-                <div class="col-xs-6">
-                    <a href="https://github.com/emkor/audiopyle">
-                        <img class="tech-logo" src="audiopyle/logo.png"></a>
+                <div class="column column-50">
+                    <img class="tech-logo" src="audiopyle/logo.png">
                 </div>
-                <div class="col-xs-6"><a href="https://github.com/emkor/openstack-on-hp-z600">
-                    <img class="tech-logo"
-                         src="img/OpenStack-Logo-Vertical.png"></a>
+                <div class="column column-50">
+                    <img style="margin-top: 1.0rem" class="tech-logo" src="img/OpenStack-Logo-Vertical.png">
                 </div>
             </div>
+        </div>
+        <div class="column column-66">
+            <h2>building open source</h2>
+            <p><a href="https://github.com/emkor/audiopyle">audiopyle</a> - audio feature extraction engine
+                <small>written in Python on Docker</small>
+            </p>
+            <p><a href="https://github.com/emkor/openstack-on-hp-z600">OpenStack@HP Z600</a> - example installation
+                procedure of OpenStack on dedicated, physical machine</p>
         </div>
     </div>
 
-    <!-- FOLLOW ME -->
+    <!-- CONTACT ME -->
     <div class="row">
-        <div class="col-sm-6">
+        <div class="column column-33">
             <div class="row">
-                <div class="col-xs-6">
-                    <a href="https://github.com/emkor"><img class="tech-logo" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"></a>
+                <div class="column column-50">
+                    <img class="tech-logo" src="img/GitHub_Logo.png">
+                </div>
+                <div class="column column-50">
+                    <img style="margin-top: 0.6rem" class="tech-logo" src="img/LinkedIn_Logo-2C-128px-R.png">
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <h3>follow me</h3>
+        <div class="column column-66">
+            <h2>contact / follow me</h2>
+                <ul>
+                    <li>me at <a href="https://github.com/emkor">GitHub</a></li>
+                    <li>me at <a href="https://www.linkedin.com/in/mateusz-korzeniowski-4aa472131/">LinkedIn</a></li>
+                    <li>contact me at <a href="mailto:emkor93@gmail.com">emkor93@gmail.com</a></li>
+                </ul>
         </div>
     </div>
 
