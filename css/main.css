@@ -48,3 +48,7 @@ ul li {
     float: left;
     margin-right: 1.6rem;
 }
+
+h1 > small {
+    font-size: 1.4rem;
+}
