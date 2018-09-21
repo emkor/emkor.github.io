@@ -1,5 +1,5 @@
 body {
-    background-color: #F4F4FC;
+    background-color: white;
 }
 
 body > .container {
@@ -48,37 +48,3 @@ ul li {
     float: left;
     margin-right: 1.6rem;
 }
-
-/*body > .container .row {*/
-    /*margin-bottom: 48px;*/
-/*}*/
-
-/*.row.right {*/
-    /*text-align: right;*/
-/*}*/
-
-/*.tech-logo {*/
-    /*max-width: 96px;*/
-    /*max-height: 48px;*/
-/*}*/
-
-/*#location_map iframe {*/
-    /*width: 100%;*/
-/*}*/
-
-/*.logo a {*/
-    /*width: 100%;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
-/*}*/
-
-/*.logo img {*/
-    /*width: 60%;*/
-    /*height: auto;*/
-    /*margin: 0 auto;*/
-/*}*/
-
-/*h3 {*/
-    /*margin-top: 0px;*/
-/*}*/
