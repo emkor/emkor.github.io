@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>mpyk - Wrocław MPK geolocation historical data</title>
+    <title>Wrocław MPK tram and buses historical, geolocation data</title>
     <meta name="author" content="Mateusz Korzeniowski">
     <meta name="keywords"
           content="wroclaw mpk tram bus buses trams geolocation data archival position gps download csv wrocław dane archiwalne pozycja tramwaje autobusy pozycja"/>
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/milligram.min.css">
     <link rel="stylesheet" href="custom.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico"/>
 </head>
 <body>
 <div class="container">
@@ -19,9 +20,9 @@
     <div id="background" class="row">
         <div class="column column-100">
             <h3>Background</h3>
-            <p>Since May 2019, I've been collecting nearly-real-time position data of Wrocław trams and buses using
-                public API</p>
-            <p>Here you can download the data and do with it something helpful to society</p>
+            <p>Since May 2019, I've been collecting nearly-real-time geolocation data of Wrocław trams and buses using
+                MPK public API</p>
+            <p>Here you can download the data and do something helpful to society with it :)</p>
             <p>For ideas, discussions or suggestions, please contact me at <a href="mailto:emkor93@gmail.com">emkor93@gmail.com</a>
             </p>
         </div>
@@ -34,7 +35,7 @@
             <p>The API is called each 15 seconds and the response is translated directly into CSV format, without any
                 attempt to validate or clean up the data</p>
             <p>There might be missing measures for few minutes here and there, as infrastructure collecting the data is
-                self-hosted and occasionally requires maintenance</p>
+                self-hosted and requires occasional maintenance</p>
         </div>
     </div>
     <div id="example" class="row">
@@ -59,6 +60,14 @@
                 <li>Latitude (N/S) in given time</li>
                 <li>Longitude (E/W) in given time</li>
             </ol>
+        </div>
+    </div>
+    <div id="source" class="row">
+        <div class="column column-100">
+            <h3>Source code and setup</h3>
+            <p>The hardware is Raspberry Pi running in my local LAN</p>
+            <p>RPi runs <a href="https://github.com/emkor/mpyk-data-collection">simple script</a> that utilizes <a
+                    href="https://github.com/emkor/mpyk">Python client</a></p>
         </div>
     </div>
     <div id="download" class="row">
