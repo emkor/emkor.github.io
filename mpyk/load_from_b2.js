@@ -1,19 +1,24 @@
-$(document).ready(function () {
-    let b2Token = "";
-    let b2DownloadUrl = "";
-    let b2ListingFileUrl = "https://f001.backblazeb2.com/file/mpk-wroclaw/listing.json";
-    let b2AuthUrl = "https://api.backblazeb2.com/b2api/v5/b2_authorize_account";
-    let b2Bucket = "mpk-wroclaw";
-    let b2IdKey = "001a56c121eaece0000000004:K001N+B5pe3hbaSZQSddFVP9WztLoEI";
-    let headers = new Headers();
-    headers.set("Authorization", "Basic " + btoa(b2IdKey));
+function bytesToSize(bytes) {
+    var sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+    if (bytes === 0) return '0';
+    var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+    return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+}
 
-    fetch(b2ListingFileUrl)
+$(document).ready(function () {
+    let b2ApiHost = "https://f001.backblazeb2.com";
+
+    fetch(b2ApiHost + "/file/mpk-wroclaw/listing.json")
         .then(resp => resp.json())
-        .then(jsonResp => {
-            console.log("Success:", jsonResp);
-            console.log("Success:", JSON.stringify(jsonResp));
+        .then(jsonResp => jsonResp.files)
+        .then(files => {
+            let htmlElems = [];
+            let dlByIdUrl = "/b2api/v1/b2_download_file_by_id?fileId=";
+            for (var file of files) {
+                let fileDlUrl = b2ApiHost + dlByIdUrl + file.fileId;
+                htmlElems.push("<li><a href='" + fileDlUrl + "'>file.fileName</a> (" + bytesToSize(file.contentLength) + ")</li>")
+            }
+            $("#download ol").append(htmlElems.join(""));
         })
         .catch(error => console.error("Error:", error));
-
 });
