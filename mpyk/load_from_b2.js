@@ -15,6 +15,7 @@ $(document).ready(function () {
     let b2ApiHost = "https://f001.backblazeb2.com";
 
     fetch("listing.json")
+        .then()
         .then(resp => resp.json())
         .then(jsonResp => jsonResp.files)
         .then(files => {
@@ -32,8 +33,12 @@ $(document).ready(function () {
                 }
             }
             $("#download table tbody").append(htmlElems.join(""));
-            $("#download table").removeClass("hidden");
             $("#download #loadInProgressInfo").addClass("hidden");
+            $("#download table").removeClass("hidden");
         })
-        .catch(error => console.error("Error:", error));
+        .catch(error => {
+            $("#download #loadInProgressInfo").addClass("hidden");
+            $("#download #loadFailedInfo").removeClass("hidden");
+            console.error("Error:", error)
+        });
 });
