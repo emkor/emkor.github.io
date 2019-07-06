@@ -32,6 +32,8 @@ $(document).ready(function () {
                 }
             }
             $("#download table tbody").append(htmlElems.join(""));
+            $("#download table").removeClass("hidden");
+            $("#download #loadInProgressInfo").addClass("hidden");
         })
         .catch(error => console.error("Error:", error));
 });
