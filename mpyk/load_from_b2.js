@@ -5,20 +5,33 @@ function bytesToSize(bytes) {
     return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
 }
 
+function timestampToUtcString(timeStamp) {
+    var newDate = new Date();
+    newDate.setTime(timeStamp);
+    return newDate.toISOString();
+}
+
 $(document).ready(function () {
     let b2ApiHost = "https://f001.backblazeb2.com";
 
-    fetch(b2ApiHost + "/file/mpk-wroclaw/listing.json")
+    fetch("listing.json")
         .then(resp => resp.json())
         .then(jsonResp => jsonResp.files)
         .then(files => {
             let htmlElems = [];
             let dlByIdUrl = "/b2api/v1/b2_download_file_by_id?fileId=";
+            let sortedFiles = files.sort((a, b) => b.uploadTimestamp - a.uploadTimestamp);
             for (var file of files) {
-                let fileDlUrl = b2ApiHost + dlByIdUrl + file.fileId;
-                htmlElems.push("<li><a href='" + fileDlUrl + "'>file.fileName</a> (" + bytesToSize(file.contentLength) + ")</li>")
+                if (file.fileName !== "listing.json") {
+                    let fileDlUrl = b2ApiHost + dlByIdUrl + file.fileId;
+                    htmlElems.push("<tr>" +
+                        "<td><a href='" + fileDlUrl + "'>" + file.fileName + "</a></td>" +
+                        "<td>" + timestampToUtcString(file.uploadTimestamp) + "</td>" +
+                        "<td>" + bytesToSize(file.contentLength) + "</td>" +
+                        "</tr>")
+                }
             }
-            $("#download ol").append(htmlElems.join(""));
+            $("#download table tbody").append(htmlElems.join(""));
         })
         .catch(error => console.error("Error:", error));
 });
