@@ -11,6 +11,11 @@ function timestampToUtcString(timeStamp) {
     return newDate.toISOString();
 }
 
+function parseCsvRowIntoObj(csvRow) {
+    let cells = csvRow.split(";");
+    return {fileName: cells[0], fileId: cells[1], contentLength: cells[2], uploadTimestamp: cells[3]}
+}
+
 $(document).ready(function () {
     let b2ApiHost = "https://f001.backblazeb2.com";
     fetch(b2ApiHost + "/file/mpk-wroclaw/listing.csv")
@@ -21,11 +26,15 @@ $(document).ready(function () {
                 return Promise.reject(new Error(resp.statusText))
             }
         })
-        .then(resp => {
-            console.log(resp);
+        .then(content => {
+            console.log(content);
             let htmlElems = [];
             let dlByIdUrl = "/b2api/v1/b2_download_file_by_id?fileId=";
-            let sortedFiles = resp.sort((a, b) => b.uploadTimestamp - a.uploadTimestamp);
+            let files = [];
+            for (let csvLine of content) {
+                files.push(parseCsvRowIntoObj(csvLine))
+            }
+            let sortedFiles = files.sort((a, b) => b.uploadTimestamp - a.uploadTimestamp);
             for (var file of sortedFiles) {
                 if (file.fileName !== "listing.json") {
                     let fileDlUrl = b2ApiHost + dlByIdUrl + file.fileId;
