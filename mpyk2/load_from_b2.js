@@ -31,7 +31,7 @@ $(document).ready(function () {
             let htmlElems = [];
             let dlByIdUrl = "/b2api/v1/b2_download_file_by_id?fileId=";
             let files = [];
-            for (let csvLine of content) {
+            for (let csvLine of content.split("\n")) {
                 files.push(parseCsvRowIntoObj(csvLine))
             }
             let sortedFiles = files.sort((a, b) => b.uploadTimestamp - a.uploadTimestamp);
