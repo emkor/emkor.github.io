@@ -32,11 +32,13 @@ $(document).ready(function () {
             let dlByIdUrl = "/b2api/v1/b2_download_file_by_id?fileId=";
             let files = [];
             for (let csvLine of content.split("\n")) {
-                files.push(parseCsvRowIntoObj(csvLine))
+                if (csvLine.length > 0) {
+                    files.push(parseCsvRowIntoObj(csvLine));
+                }
             }
             let sortedFiles = files.sort((a, b) => b.uploadTimestamp - a.uploadTimestamp);
             for (var file of sortedFiles) {
-                if (file.fileName !== "listing.json") {
+                if (file.fileName !== "listing.json" && file.fileName !== "listing.csv") {
                     let fileDlUrl = b2ApiHost + dlByIdUrl + file.fileId;
                     htmlElems.push("<tr>" +
                         "<td><a href='" + fileDlUrl + "'>" + file.fileName + "</a></td>" +
