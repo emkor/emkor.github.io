@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wrocław MPK tram and buses historical, geolocation data</title>
+    <meta name="author" content="Mateusz Korzeniowski">
+    <meta name="keywords"
+          content="wroclaw mpk tram bus buses trams geolocation data archival position gps download csv wrocław dane archiwalne pozycja tramwaje autobusy pozycja"/>
+    <meta name="description" content="mpyk - Wrocław MPK geolocation historical data">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/milligram.min.css">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico"/>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="load_from_b2.js"></script>
+</head>
+<body>
+<div class="container">
+    <div id="intro" class="row">
+        <h2>Wrocław MPK (tram and buses) historical, geolocation data</h2>
+    </div>
+    <div id="example" class="row">
+        <div class="column column-100">
+            <h3>Data example</h3>
+            <pre>2019-06-30T02:07:24.527025;tram;7;13397250;51.124763;17.038773
+2019-06-30T02:07:24.527025;tram;10;13396302;51.12382;17.04098
+2019-06-30T02:07:24.527025;bus;246;13411103;51.114193;16.967928
+2019-06-30T02:07:24.527025;bus;d;13413603;51.148746;17.021032</pre>
+        </div>
+    </div>
+
+    <div id="quality" class="row">
+        <div class="column column-50">
+            <h3>Data format</h3>
+            <p>Each contains 6 columns (cells) separated by ; (semicolon), each cell representing:</p>
+            <ol>
+                <li>API call time as UTC (you need to convert it to local Wrocław time on your side)</li>
+                <li>Line type (bus or tram)</li>
+                <li>Bus/tram line number</li>
+                <li>Bus/tram unit identifier</li>
+                <li>Latitude (N/S) in given time</li>
+                <li>Longitude (E/W) in given time</li>
+            </ol>
+        </div>
+        <div class="column column-50">
+            <h3>Data quality</h3>
+            <p>Data is stored daily as a zipped CSV file, each line representing position of a single tram/bus unit in
+                given time</p>
+            <p>The API is called each 15 seconds and the response is translated directly into CSV format, without any
+                attempt to validate or clean up the data</p>
+            <p>There might be missing measures for few minutes here and there, as infrastructure collecting the data is
+                self-hosted and requires occasional maintenance</p>
+        </div>
+    </div>
+    <div id="source" class="row">
+        <div class="column column-50">
+            <h3>Background</h3>
+            <p>Since May 2019, I've been collecting nearly-real-time geolocation data of Wrocław trams and buses using
+                MPK public API</p>
+            <p>Here you can download the data and do something helpful to society with it :)</p>
+            <p>For ideas, discussions or suggestions, please contact me at <a href="mailto:emkor93@gmail.com">emkor93@gmail.com</a>
+            </p>
+        </div>
+        <div class="column column-50">
+            <h3>Source code and setup</h3>
+            <p>The hardware is Raspberry Pi running in my local LAN</p>
+            <p>RPi runs <a href="https://github.com/emkor/mpyk-data-collection">simple script</a> that utilizes my <a
+                    href="https://github.com/emkor/mpyk">MPK API client</a></p>
+        </div>
+    </div>
+    <div id="disclosure" class="row">
+        <div class="column column-100">
+            <h3>Disclosure</h3>
+            <p>Data is hosted on Backblaze's <a href="https://www.backblaze.com/b2/cloud-storage.html">B2 Cloud Storage
+                service</a>, and since I'm using cheap plan, daily download is capped at 2GB.</p>
+            <p>It means that if Backblaze cancels your download, please try again the other day.</p>
+        </div>
+    </div>
+    <div id="download" class="row">
+        <div class="column column-100">
+            <h3>Download</h3>
+            <p id="loadInProgressInfo">Please wait while file list is being retrieved from B2...</p>
+            <p id="loadFailedInfo" class="hidden">Something went wrong when contacting B2 service. Concat me on this at
+                <a href="mailto:emkor93@gmail.com">emkor93@gmail.com</a></p>
+            <table class="hidden">
+                <thead>
+                <tr>
+                    <th>File name</th>
+                    <th>Uploaded at (UTC)</th>
+                    <th>Size</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
