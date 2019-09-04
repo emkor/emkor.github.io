@@ -38,10 +38,10 @@ $(document).ready(function () {
             }
             let sortedFiles = files.sort((a, b) => {
                 if (a.fileName < b.fileName) {
-                    return -1
+                    return 1
                 }
                 if (a.fileName > b.fileName) {
-                    return 1
+                    return -1
                 }
                 return b.uploadTimestamp - a.uploadTimestamp;
             });
