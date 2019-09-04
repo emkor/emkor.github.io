@@ -36,7 +36,15 @@ $(document).ready(function () {
                     files.push(parseCsvRowIntoObj(csvLine));
                 }
             }
-            let sortedFiles = files.sort((a, b) => b.uploadTimestamp - a.uploadTimestamp);
+            let sortedFiles = files.sort((a, b) => {
+                if (a.fileName < b.fileName) {
+                    return -1
+                }
+                if (a.fileName > b.fileName) {
+                    return 1
+                }
+                return b.uploadTimestamp - a.uploadTimestamp;
+            });
             for (var file of sortedFiles) {
                 if (file.fileName !== "listing.json" && file.fileName !== "listing.csv") {
                     let fileDlUrl = b2ApiHost + dlByIdUrl + file.fileId;
