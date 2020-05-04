@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>emkor&#39;s page</title>
-    <link>http://example.org/</link>
+    <link>https://emkor.eu/</link>
     <description>Recent content on emkor&#39;s page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 May 2020 22:54:04 +0200</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://emkor.eu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello world from hugo static page generator</title>
-      <link>http://example.org/posts/hello-world/</link>
+      <link>https://emkor.eu/posts/hello-world/</link>
       <pubDate>Mon, 04 May 2020 22:54:04 +0200</pubDate>
       
-      <guid>http://example.org/posts/hello-world/</guid>
+      <guid>https://emkor.eu/posts/hello-world/</guid>
       <description>&lt;h1 id=&#34;first-time-with-static-site-generator&#34;&gt;First time with static site generator&lt;/h1&gt;
 &lt;p&gt;Re-writing my personal website using static site generator &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; and following resources:&lt;/p&gt;
 &lt;ul&gt;
