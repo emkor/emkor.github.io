@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on emkor&#39;s page</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on emkor&#39;s page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 May 2020 22:54:04 +0200</lastBuildDate>
+    
+	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello world from hugo static page generator</title>
+      <link>http://example.org/posts/hello-world/</link>
+      <pubDate>Mon, 04 May 2020 22:54:04 +0200</pubDate>
+      
+      <guid>http://example.org/posts/hello-world/</guid>
+      <description>&lt;h1 id=&#34;first-time-with-static-site-generator&#34;&gt;First time with static site generator&lt;/h1&gt;
+&lt;p&gt;Re-writing my personal website using static site generator &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; and following resources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://tkainrad.dev/posts/using-hugo-gitlab-pages-and-cloudflare-to-create-and-run-this-website/&#34;&gt;brilliant post by Thomas Kainrad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;hosting on github pages instructions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

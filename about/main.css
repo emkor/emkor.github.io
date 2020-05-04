@@ -1,0 +1,54 @@
+body {
+    background-color: white;
+}
+
+body > .container {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+}
+
+img#avatar {
+    width: 6.4rem;
+    height: auto;
+    border-radius: 0.8rem;
+    float: right;
+}
+
+img.tech-logo {
+    /*max-width: 9.6rem;*/
+    /*max-height: 9.6rem;*/
+
+    width: 60%;
+    margin: 0 auto;
+}
+
+img.tech-logo-large {
+    width: 80%;
+    height: auto;
+}
+
+.row {
+    margin-top: 2.4rem;
+}
+
+#location-map {
+    width: 85%;
+}
+
+ul {
+    margin-left: 1.6rem;
+}
+
+ul li {
+    font-size: 1.4rem;
+}
+
+#hi small a {
+    display: block;
+    float: left;
+    margin-right: 1.6rem;
+}
+
+h1 > small {
+    font-size: 1.4rem;
+}
