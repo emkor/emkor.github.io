@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>emkor&#39;s page</title>
-    <link>https://emkor.eu/</link>
+    <link>https://www.emkor.eu/</link>
     <description>Recent content on emkor&#39;s page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 May 2020 08:59:04 +0200</lastBuildDate>
     
-	<atom:link href="https://emkor.eu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.emkor.eu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello world from hugo static page generator</title>
-      <link>https://emkor.eu/posts/hello-world/</link>
+      <link>https://www.emkor.eu/posts/hello-world/</link>
       <pubDate>Mon, 04 May 2020 22:54:04 +0200</pubDate>
       
-      <guid>https://emkor.eu/posts/hello-world/</guid>
+      <guid>https://www.emkor.eu/posts/hello-world/</guid>
       <description>&lt;h1 id=&#34;first-time-with-static-site-generator&#34;&gt;First time with static site generator&lt;/h1&gt;
 &lt;p&gt;Re-writing my personal website using static site generator &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; and following resources:&lt;/p&gt;
 &lt;ul&gt;
@@ -28,10 +28,10 @@
     
     <item>
       <title>Mateusz Korzeniowski</title>
-      <link>https://emkor.eu/about/</link>
+      <link>https://www.emkor.eu/about/</link>
       <pubDate>Mon, 04 May 2020 08:59:04 +0200</pubDate>
       
-      <guid>https://emkor.eu/about/</guid>
+      <guid>https://www.emkor.eu/about/</guid>
       <description>&lt;h4 id=&#34;software-engineer-since-2015&#34;&gt;Software Engineer since 2015&lt;/h4&gt;
 &lt;p&gt;Expertise:&lt;/p&gt;
 &lt;ul&gt;
@@ -71,10 +71,10 @@
     
     <item>
       <title>Projects, tutorials, data</title>
-      <link>https://emkor.eu/projects/</link>
+      <link>https://www.emkor.eu/projects/</link>
       <pubDate>Mon, 04 May 2020 08:59:04 +0200</pubDate>
       
-      <guid>https://emkor.eu/projects/</guid>
+      <guid>https://www.emkor.eu/projects/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/emkor/mpyk&#34;&gt;library&lt;/a&gt; for retrieving geolocation data for Wrocław public transit (tram and buses, basically)&lt;/li&gt;
 &lt;li&gt;harvesting Wrocław public transit geolocation data and &lt;a href=&#34;https://www.emkor.eu/mpyk&#34;&gt;publishing it&lt;/a&gt; using &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;Backblaze B2 service&lt;/a&gt;&lt;/li&gt;
