@@ -56,6 +56,8 @@
 &lt;li&gt;machine learning&lt;/li&gt;
 &lt;li&gt;front-end Javascript&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h4 id=&#34;open-source&#34;&gt;Open-source&lt;/h4&gt;
+&lt;p&gt;See &lt;a href=&#34;https://www.emkor.eu/projects/&#34;&gt;Projects&lt;/a&gt; for some of my open source work&lt;/p&gt;
 &lt;h4 id=&#34;located-in-wrocław-poland&#34;&gt;Located in Wrocław, Poland&lt;/h4&gt;
 &lt;iframe width=&#34;640&#34; height=&#34;350&#34; frameborder=&#34;0&#34; scrolling=&#34;no&#34; marginheight=&#34;0&#34; marginwidth=&#34;0&#34;
         src=&#34;https://www.openstreetmap.org/export/embed.html?bbox=-11.733398437500002%2C39.19820534889482%2C45.6591796875%2C60.6301017662667&amp;amp;amp;layer=mapnik&amp;amp;amp;marker=51.126475253705244%2C16.948814392089844&#34;
@@ -75,14 +77,21 @@
       <pubDate>Mon, 04 May 2020 08:59:04 +0200</pubDate>
       
       <guid>https://www.emkor.eu/projects/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/emkor/mpyk&#34;&gt;library&lt;/a&gt; for retrieving geolocation data for Wrocław public transit (tram and buses, basically)&lt;/li&gt;
-&lt;li&gt;harvesting Wrocław public transit geolocation data and &lt;a href=&#34;https://www.emkor.eu/mpyk&#34;&gt;publishing it&lt;/a&gt; using &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;Backblaze B2 service&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;self-hosting homelab server &lt;a href=&#34;https://github.com/emkor/infra-homelab&#34;&gt;with instructions&lt;/a&gt;, &lt;a href=&#34;https://www.rdoproject.org/install/packstack&#34;&gt;Packstack-based&lt;/a&gt;&lt;/li&gt;
+      <description>&lt;h4 id=&#34;libraries--tools--services&#34;&gt;Libraries / tools / services&lt;/h4&gt;
+&lt;ul&gt;
 &lt;li&gt;built &lt;a href=&#34;https://github.com/emkor/recogn-img&#34;&gt;own library&lt;/a&gt; for image recognition on CCTV camera images, with &lt;a href=&#34;https://pjreddie.com/darknet/yolo/&#34;&gt;YOLO model&lt;/a&gt; included , packaged and published as &lt;a href=&#34;https://hub.docker.com/repository/docker/emkor/recogn-img&#34;&gt;docker image&lt;/a&gt; for convenience&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.emkor.eu/curator/&#34;&gt;I&amp;rsquo;ve built Spotify playlist manager (alpha-stage!)&lt;/a&gt; using &lt;a href=&#34;https://vuejs.org/&#34;&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/emkor/napi-py&#34;&gt;CLI tool for downloading movie subtitles&lt;/a&gt; published on &lt;a href=&#34;https://pypi.org/project/napi-py/&#34;&gt;pypi&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;(abandoned) &lt;a href=&#34;https://github.com/emkor/audiopyle&#34;&gt;audio feature extraction engine&lt;/a&gt; in microservice design, deployed on docker, backed by Celery, RabbitMQ and MySQL&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/emkor/mpyk&#34;&gt;library&lt;/a&gt; for retrieving geolocation data for Wrocław public transit (tram and buses, basically)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;published-data&#34;&gt;Published data&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;harvesting and publishing &lt;a href=&#34;https://www.emkor.eu/mpyk&#34;&gt;Wrocław public transit geolocation data&lt;/a&gt; using &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;Backblaze B2 service&lt;/a&gt; and Raspberry Pi hidden in my wardrobe :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;instructions--tutorials&#34;&gt;Instructions / tutorials&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;self-hosting OpenStack-based homelab server &lt;a href=&#34;https://github.com/emkor/infra-homelab&#34;&gt;with instructions&lt;/a&gt; backed by &lt;a href=&#34;https://www.rdoproject.org/install/packstack&#34;&gt;Packstack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;this website/blog :)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
