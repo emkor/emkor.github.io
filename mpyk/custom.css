@@ -1,0 +1,8 @@
+body > .container {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+}
+
+.hidden {
+    display: none;
+}

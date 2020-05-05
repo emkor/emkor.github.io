@@ -2,26 +2,88 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>emkor&#39;s page</title>
-    <link>https://www.emkor.eu/</link>
+    <link>https://emkor.eu/</link>
     <description>Recent content on emkor&#39;s page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 May 2020 22:54:04 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2020 08:59:04 +0200</lastBuildDate>
     
-	<atom:link href="https://www.emkor.eu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://emkor.eu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello world from hugo static page generator</title>
-      <link>https://www.emkor.eu/posts/hello-world/</link>
+      <link>https://emkor.eu/posts/hello-world/</link>
       <pubDate>Mon, 04 May 2020 22:54:04 +0200</pubDate>
       
-      <guid>https://www.emkor.eu/posts/hello-world/</guid>
+      <guid>https://emkor.eu/posts/hello-world/</guid>
       <description>&lt;h1 id=&#34;first-time-with-static-site-generator&#34;&gt;First time with static site generator&lt;/h1&gt;
 &lt;p&gt;Re-writing my personal website using static site generator &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; and following resources:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://tkainrad.dev/posts/using-hugo-gitlab-pages-and-cloudflare-to-create-and-run-this-website/&#34;&gt;brilliant post by Thomas Kainrad&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;hosting on github pages instructions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mateusz Korzeniowski</title>
+      <link>https://emkor.eu/about/</link>
+      <pubDate>Mon, 04 May 2020 08:59:04 +0200</pubDate>
+      
+      <guid>https://emkor.eu/about/</guid>
+      <description>&lt;h4 id=&#34;software-engineer-since-2015&#34;&gt;Software Engineer since 2015&lt;/h4&gt;
+&lt;p&gt;Expertise:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python 2, 3, basics of asyncio&lt;/li&gt;
+&lt;li&gt;RabbitMQ message broker&lt;/li&gt;
+&lt;li&gt;Docker containers&lt;/li&gt;
+&lt;li&gt;Linux servers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Experience:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kubernetes platform: participated in designing and implementing transition to k8s from docker-compose microservices service)&lt;/li&gt;
+&lt;li&gt;Java 8 (1.5 year in enterprise project)&lt;/li&gt;
+&lt;li&gt;SQL databases&lt;/li&gt;
+&lt;li&gt;microservices design, concurrent systems&lt;/li&gt;
+&lt;li&gt;various CI tools (GitLab Pipelines, Jenkins, Travis CI, Bamboo CI, GitHub Actions)&lt;/li&gt;
+&lt;li&gt;Agile development using LeSS methodology&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Interested in, but not much experience:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;basic devops (terraform, infrastructure-as-a-code patterns)&lt;/li&gt;
+&lt;li&gt;Golang&lt;/li&gt;
+&lt;li&gt;machine learning&lt;/li&gt;
+&lt;li&gt;front-end Javascript&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;located-in-wrocław-poland&#34;&gt;Located in Wrocław, Poland&lt;/h4&gt;
+&lt;iframe width=&#34;640&#34; height=&#34;350&#34; frameborder=&#34;0&#34; scrolling=&#34;no&#34; marginheight=&#34;0&#34; marginwidth=&#34;0&#34;
+        src=&#34;https://www.openstreetmap.org/export/embed.html?bbox=-11.733398437500002%2C39.19820534889482%2C45.6591796875%2C60.6301017662667&amp;amp;amp;layer=mapnik&amp;amp;amp;marker=51.126475253705244%2C16.948814392089844&#34;
+        style=&#34;border: 1px solid black&#34;&gt;&lt;/iframe&gt;&lt;br/&gt;
+&lt;small&gt;&lt;a href=&#34;https://www.openstreetmap.org/#map=7/52.012/17.765&#34;&gt;Show full map&lt;/a&gt;&lt;/small&gt;
+&lt;h4 id=&#34;contact&#34;&gt;Contact&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;email &lt;a href=&#34;mailto:emkor93@gmail.com&#34;&gt;emkor93@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/mateusz-korzeniowski-4aa472131/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Projects, tutorials, data</title>
+      <link>https://emkor.eu/projects/</link>
+      <pubDate>Mon, 04 May 2020 08:59:04 +0200</pubDate>
+      
+      <guid>https://emkor.eu/projects/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/emkor/mpyk&#34;&gt;library&lt;/a&gt; for retrieving geolocation data for Wrocław public transit (tram and buses, basically)&lt;/li&gt;
+&lt;li&gt;harvesting Wrocław public transit geolocation data and &lt;a href=&#34;https://www.emkor.eu/mpyk&#34;&gt;publishing it&lt;/a&gt; using &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;Backblaze B2 service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;self-hosting homelab server &lt;a href=&#34;https://github.com/emkor/infra-homelab&#34;&gt;with instructions&lt;/a&gt;, &lt;a href=&#34;https://www.rdoproject.org/install/packstack&#34;&gt;Packstack-based&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;built &lt;a href=&#34;https://github.com/emkor/recogn-img&#34;&gt;own library&lt;/a&gt; for image recognition on CCTV camera images, with &lt;a href=&#34;https://pjreddie.com/darknet/yolo/&#34;&gt;YOLO model&lt;/a&gt; included , packaged and published as &lt;a href=&#34;https://hub.docker.com/repository/docker/emkor/recogn-img&#34;&gt;docker image&lt;/a&gt; for convenience&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.emkor.eu/curator/&#34;&gt;I&amp;rsquo;ve built Spotify playlist manager (alpha-stage!)&lt;/a&gt; using &lt;a href=&#34;https://vuejs.org/&#34;&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/emkor/napi-py&#34;&gt;CLI tool for downloading movie subtitles&lt;/a&gt; published on &lt;a href=&#34;https://pypi.org/project/napi-py/&#34;&gt;pypi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;(abandoned) &lt;a href=&#34;https://github.com/emkor/audiopyle&#34;&gt;audio feature extraction engine&lt;/a&gt; in microservice design, deployed on docker, backed by Celery, RabbitMQ and MySQL&lt;/li&gt;
+&lt;li&gt;this website/blog :)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
