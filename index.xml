@@ -59,10 +59,11 @@
 &lt;h4 id=&#34;open-source&#34;&gt;Open-source&lt;/h4&gt;
 &lt;p&gt;See &lt;a href=&#34;https://www.emkor.eu/projects/&#34;&gt;Projects&lt;/a&gt; for some of my open source work&lt;/p&gt;
 &lt;h4 id=&#34;located-in-wrocław-poland&#34;&gt;Located in Wrocław, Poland&lt;/h4&gt;
-&lt;iframe width=&#34;640&#34; height=&#34;350&#34; frameborder=&#34;0&#34; scrolling=&#34;no&#34; marginheight=&#34;0&#34; marginwidth=&#34;0&#34;
-        src=&#34;https://www.openstreetmap.org/export/embed.html?bbox=-11.733398437500002%2C39.19820534889482%2C45.6591796875%2C60.6301017662667&amp;amp;amp;layer=mapnik&amp;amp;amp;marker=51.126475253705244%2C16.948814392089844&#34;
-        style=&#34;border: 1px solid black&#34;&gt;&lt;/iframe&gt;&lt;br/&gt;
-&lt;small&gt;&lt;a href=&#34;https://www.openstreetmap.org/#map=7/52.012/17.765&#34;&gt;Show full map&lt;/a&gt;&lt;/small&gt;
+&lt;div&gt;
+    &lt;iframe width=&#34;640&#34; height=&#34;350&#34; frameborder=&#34;0&#34; scrolling=&#34;no&#34; marginheight=&#34;0&#34; marginwidth=&#34;0&#34; src=&#34;https://www.openstreetmap.org/export/embed.html?bbox=-11.733398437500002%2C39.19820534889482%2C45.6591796875%2C60.6301017662667&amp;amp;amp;layer=mapnik&amp;amp;amp;marker=51.126475253705244%2C16.948814392089844&#34;
+    style=&#34;border: 1px solid black&#34;&gt;&lt;/iframe&gt;&lt;br/&gt;
+    &lt;small&gt;&lt;a href=&#34;https://www.openstreetmap.org/?mlat=51.126&amp;amp;amp;mlon=16.949#map=5/51.126/16.949&#34;&gt;Show full map&lt;/a&gt;&lt;/small&gt;
+&lt;/div&gt;
 &lt;h4 id=&#34;contact&#34;&gt;Contact&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;email &lt;a href=&#34;mailto:emkor93@gmail.com&#34;&gt;emkor93@gmail.com&lt;/a&gt;&lt;/li&gt;
@@ -82,7 +83,7 @@
 &lt;li&gt;built &lt;a href=&#34;https://github.com/emkor/recogn-img&#34;&gt;own library&lt;/a&gt; for image recognition on CCTV camera images, with &lt;a href=&#34;https://pjreddie.com/darknet/yolo/&#34;&gt;YOLO model&lt;/a&gt; included , packaged and published as &lt;a href=&#34;https://hub.docker.com/repository/docker/emkor/recogn-img&#34;&gt;docker image&lt;/a&gt; for convenience&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.emkor.eu/curator/&#34;&gt;I&amp;rsquo;ve built Spotify playlist manager (alpha-stage!)&lt;/a&gt; using &lt;a href=&#34;https://vuejs.org/&#34;&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/emkor/napi-py&#34;&gt;CLI tool for downloading movie subtitles&lt;/a&gt; published on &lt;a href=&#34;https://pypi.org/project/napi-py/&#34;&gt;pypi&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;(abandoned) &lt;a href=&#34;https://github.com/emkor/audiopyle&#34;&gt;audio feature extraction engine&lt;/a&gt; in microservice design, deployed on docker, backed by Celery, RabbitMQ and MySQL&lt;/li&gt;
+&lt;li&gt;(abandoned) &lt;a href=&#34;https://github.com/emkor/audiopyle&#34;&gt;audio feature extraction engine&lt;/a&gt; in microservice design, deployed on &lt;a href=&#34;https://www.docker.com/products/container-runtime&#34;&gt;Docker&lt;/a&gt;, backed by &lt;a href=&#34;http://www.celeryproject.org/&#34;&gt;Celery&lt;/a&gt;, &lt;a href=&#34;https://www.rabbitmq.com/&#34;&gt;RabbitMQ&lt;/a&gt; and &lt;a href=&#34;https://www.mysql.com&#34;&gt;MySQL&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/emkor/mpyk&#34;&gt;library&lt;/a&gt; for retrieving geolocation data for Wrocław public transit (tram and buses, basically)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;published-data&#34;&gt;Published data&lt;/h4&gt;
@@ -91,7 +92,7 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;instructions--tutorials&#34;&gt;Instructions / tutorials&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;self-hosting OpenStack-based homelab server &lt;a href=&#34;https://github.com/emkor/infra-homelab&#34;&gt;with instructions&lt;/a&gt; backed by &lt;a href=&#34;https://www.rdoproject.org/install/packstack&#34;&gt;Packstack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;self-hosting &lt;a href=&#34;https://www.openstack.org/&#34;&gt;OpenStack-based&lt;/a&gt; homelab server &lt;a href=&#34;https://github.com/emkor/infra-homelab&#34;&gt;with instructions&lt;/a&gt; backed by &lt;a href=&#34;https://www.rdoproject.org/install/packstack&#34;&gt;Packstack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;this website/blog :)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
