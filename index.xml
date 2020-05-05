@@ -32,7 +32,7 @@
       <pubDate>Mon, 04 May 2020 08:59:04 +0200</pubDate>
       
       <guid>https://www.emkor.eu/about/</guid>
-      <description>&lt;h4 id=&#34;software-engineer-since-2015&#34;&gt;Software Engineer since 2015&lt;/h4&gt;
+      <description>&lt;h4 id=&#34;coding-for-living-since-2013&#34;&gt;Coding for living since 2013&lt;/h4&gt;
 &lt;p&gt;Expertise:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Python 2, 3, basics of asyncio&lt;/li&gt;
@@ -42,7 +42,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Experience:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Kubernetes platform: participated in designing and implementing transition to k8s from docker-compose microservices service)&lt;/li&gt;
+&lt;li&gt;Kubernetes platform&lt;/li&gt;
 &lt;li&gt;Java 8 (1.5 year in enterprise project)&lt;/li&gt;
 &lt;li&gt;SQL databases&lt;/li&gt;
 &lt;li&gt;microservices design, concurrent systems&lt;/li&gt;
