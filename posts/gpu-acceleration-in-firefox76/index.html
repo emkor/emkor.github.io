@@ -7,17 +7,17 @@
     <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Mateusz Korzeniowski">
-    <meta name="description" content="Firefox 76 came out yesterday, bringing to the table - amongst more widely known features - initial support for hardware acceleration of VP9-encoded videos. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word initial there - few tweaks are gonna be required to pull the hardware acceleration off.
+    <meta name="description" content="Firefox 76 came out yesterday, bringing to the table - amongst more widely known features - initial support for hardware acceleration of VP9-encoded videos for Wayland. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word initial there - few tweaks are gonna be required to pull the hardware acceleration off.
 This guide is a compilation of tips and tweaks from various sources, like Martin Stransky&rsquo;s Blog, who is one of the Firefox developers, Arch wikis (1, 2) and some Reddit threads 1">
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04"/>
-<meta name="twitter:description" content="Firefox 76 came out yesterday, bringing to the table - amongst more widely known features - initial support for hardware acceleration of VP9-encoded videos. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word initial there - few tweaks are gonna be required to pull the hardware acceleration off.
+<meta name="twitter:title" content="Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04 with Wayland"/>
+<meta name="twitter:description" content="Firefox 76 came out yesterday, bringing to the table - amongst more widely known features - initial support for hardware acceleration of VP9-encoded videos for Wayland. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word initial there - few tweaks are gonna be required to pull the hardware acceleration off.
 This guide is a compilation of tips and tweaks from various sources, like Martin Stransky&rsquo;s Blog, who is one of the Firefox developers, Arch wikis (1, 2) and some Reddit threads 1"/>
 
-    <meta property="og:title" content="Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04" />
-<meta property="og:description" content="Firefox 76 came out yesterday, bringing to the table - amongst more widely known features - initial support for hardware acceleration of VP9-encoded videos. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word initial there - few tweaks are gonna be required to pull the hardware acceleration off.
+    <meta property="og:title" content="Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04 with Wayland" />
+<meta property="og:description" content="Firefox 76 came out yesterday, bringing to the table - amongst more widely known features - initial support for hardware acceleration of VP9-encoded videos for Wayland. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word initial there - few tweaks are gonna be required to pull the hardware acceleration off.
 This guide is a compilation of tips and tweaks from various sources, like Martin Stransky&rsquo;s Blog, who is one of the Firefox developers, Arch wikis (1, 2) and some Reddit threads 1" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.emkor.eu/posts/gpu-acceleration-in-firefox76/" />
@@ -29,7 +29,7 @@ This guide is a compilation of tips and tweaks from various sources, like Martin
       <base href="https://www.emkor.eu/posts/gpu-acceleration-in-firefox76/">
     
     <title>
-  Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04 · emkor&#39;s page
+  Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04 with Wayland · emkor&#39;s page
 </title>
 
     
@@ -101,7 +101,7 @@ This guide is a compilation of tips and tweaks from various sources, like Martin
     <article>
       <header>
         <div class="post-title">
-          <h1 class="title">Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04</h1>
+          <h1 class="title">Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04 with Wayland</h1>
         </div>
         <div class="post-meta">
           <div class="date">
@@ -123,7 +123,7 @@ This guide is a compilation of tips and tweaks from various sources, like Martin
 
       <div>
         
-        <p>Firefox 76 came out yesterday, bringing to the table - amongst <a href="https://developer.mozilla.org/pl/docs/Mozilla/Firefox/Releases/76">more widely known features</a> - initial support for <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1619258">hardware acceleration of VP9-encoded videos</a>. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word <em>initial</em> there - few tweaks are gonna be required to pull the hardware acceleration off.</p>
+        <p>Firefox 76 came out yesterday, bringing to the table - amongst <a href="https://developer.mozilla.org/pl/docs/Mozilla/Firefox/Releases/76">more widely known features</a> - initial support for <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1619258">hardware acceleration of VP9-encoded videos</a> for Wayland. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word <em>initial</em> there - few tweaks are gonna be required to pull the hardware acceleration off.</p>
 <p>This guide is a compilation of tips and tweaks from various sources, like <a href="https://mastransky.wordpress.com/2020/03/03/webgl-and-fgx-acceleration-on-wayland/">Martin Stransky&rsquo;s Blog</a>, who is one of the Firefox developers, Arch wikis (<a href="https://wiki.archlinux.org/index.php/Firefox#Hardware_video_acceleration">1</a>, <a href="https://wiki.archlinux.org/index.php/Hardware_video_acceleration">2</a>) and some Reddit threads <a href="https://old.reddit.com/r/firefox/comments/fjb00w/swaywayland_firefox_nightly_76_h264_vp9_hardware/">1</a></p>
 <h3 id="prerequisites">Prerequisites</h3>
 <p>First, if you have NVIDIA GPU, there&rsquo;s no hope. As you probably know, there&rsquo;s <a href="https://github.com/swaywm/sway/issues/3039#issuecomment-434602125">not so much love for NVIDIA</a> in open-source world, and this feature is indifferent. Other than that, if you happen to have non-ancient AMD/ATI or Intel iGPU, you&rsquo;re in luck.</p>

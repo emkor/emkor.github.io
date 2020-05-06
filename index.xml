@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04</title>
+      <title>Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04 with Wayland</title>
       <link>https://www.emkor.eu/posts/gpu-acceleration-in-firefox76/</link>
       <pubDate>Wed, 06 May 2020 15:53:05 +0200</pubDate>
       
       <guid>https://www.emkor.eu/posts/gpu-acceleration-in-firefox76/</guid>
-      <description>&lt;p&gt;Firefox 76 came out yesterday, bringing to the table - amongst &lt;a href=&#34;https://developer.mozilla.org/pl/docs/Mozilla/Firefox/Releases/76&#34;&gt;more widely known features&lt;/a&gt; - initial support for &lt;a href=&#34;https://bugzilla.mozilla.org/show_bug.cgi?id=1619258&#34;&gt;hardware acceleration of VP9-encoded videos&lt;/a&gt;. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word &lt;em&gt;initial&lt;/em&gt; there - few tweaks are gonna be required to pull the hardware acceleration off.&lt;/p&gt;
+      <description>&lt;p&gt;Firefox 76 came out yesterday, bringing to the table - amongst &lt;a href=&#34;https://developer.mozilla.org/pl/docs/Mozilla/Firefox/Releases/76&#34;&gt;more widely known features&lt;/a&gt; - initial support for &lt;a href=&#34;https://bugzilla.mozilla.org/show_bug.cgi?id=1619258&#34;&gt;hardware acceleration of VP9-encoded videos&lt;/a&gt; for Wayland. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word &lt;em&gt;initial&lt;/em&gt; there - few tweaks are gonna be required to pull the hardware acceleration off.&lt;/p&gt;
 &lt;p&gt;This guide is a compilation of tips and tweaks from various sources, like &lt;a href=&#34;https://mastransky.wordpress.com/2020/03/03/webgl-and-fgx-acceleration-on-wayland/&#34;&gt;Martin Stransky&amp;rsquo;s Blog&lt;/a&gt;, who is one of the Firefox developers, Arch wikis (&lt;a href=&#34;https://wiki.archlinux.org/index.php/Firefox#Hardware_video_acceleration&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;https://wiki.archlinux.org/index.php/Hardware_video_acceleration&#34;&gt;2&lt;/a&gt;) and some Reddit threads &lt;a href=&#34;https://old.reddit.com/r/firefox/comments/fjb00w/swaywayland_firefox_nightly_76_h264_vp9_hardware/&#34;&gt;1&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
 &lt;p&gt;First, if you have NVIDIA GPU, there&amp;rsquo;s no hope. As you probably know, there&amp;rsquo;s &lt;a href=&#34;https://github.com/swaywm/sway/issues/3039#issuecomment-434602125&#34;&gt;not so much love for NVIDIA&lt;/a&gt; in open-source world, and this feature is indifferent. Other than that, if you happen to have non-ancient AMD/ATI or Intel iGPU, you&amp;rsquo;re in luck.&lt;/p&gt;
