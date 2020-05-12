@@ -6,23 +6,72 @@
     <description>Recent content in Posts on emkor&#39;s page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 May 2020 22:54:04 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 15:53:05 +0200</lastBuildDate>
     
 	<atom:link href="https://www.emkor.eu/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello world from hugo static page generator</title>
-      <link>https://www.emkor.eu/posts/hello-world/</link>
-      <pubDate>Mon, 04 May 2020 22:54:04 +0200</pubDate>
+      <title>Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04 with Wayland</title>
+      <link>https://www.emkor.eu/posts/gpu-acceleration-in-firefox76/</link>
+      <pubDate>Wed, 06 May 2020 15:53:05 +0200</pubDate>
       
-      <guid>https://www.emkor.eu/posts/hello-world/</guid>
-      <description>&lt;h1 id=&#34;first-time-with-static-site-generator&#34;&gt;First time with static site generator&lt;/h1&gt;
-&lt;p&gt;Re-writing my personal website using static site generator &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; and following resources:&lt;/p&gt;
+      <guid>https://www.emkor.eu/posts/gpu-acceleration-in-firefox76/</guid>
+      <description>&lt;p&gt;Firefox 76 came out yesterday, bringing to the table - amongst &lt;a href=&#34;https://developer.mozilla.org/pl/docs/Mozilla/Firefox/Releases/76&#34;&gt;more widely known features&lt;/a&gt; - initial support for &lt;a href=&#34;https://bugzilla.mozilla.org/show_bug.cgi?id=1619258&#34;&gt;hardware acceleration of VP9-encoded videos&lt;/a&gt; for Wayland. Translating to human language: now you can watch YouTube videos without making your laptop fans spinning at full speed. Please note, however, the word &lt;em&gt;initial&lt;/em&gt; there - few tweaks are gonna be required to pull the hardware acceleration off.&lt;/p&gt;
+&lt;p&gt;This guide is a compilation of tips and tweaks from various sources, like &lt;a href=&#34;https://mastransky.wordpress.com/2020/03/03/webgl-and-fgx-acceleration-on-wayland/&#34;&gt;Martin Stransky&amp;rsquo;s Blog&lt;/a&gt;, who is one of the Firefox developers, Arch wikis (&lt;a href=&#34;https://wiki.archlinux.org/index.php/Firefox#Hardware_video_acceleration&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;https://wiki.archlinux.org/index.php/Hardware_video_acceleration&#34;&gt;2&lt;/a&gt;) and some Reddit threads &lt;a href=&#34;https://old.reddit.com/r/firefox/comments/fjb00w/swaywayland_firefox_nightly_76_h264_vp9_hardware/&#34;&gt;1&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
+&lt;p&gt;First, if you have NVIDIA GPU, there&amp;rsquo;s no hope. As you probably know, there&amp;rsquo;s &lt;a href=&#34;https://github.com/swaywm/sway/issues/3039#issuecomment-434602125&#34;&gt;not so much love for NVIDIA&lt;/a&gt; in open-source world, and this feature is indifferent. Other than that, if you happen to have non-ancient AMD/ATI or Intel iGPU, you&amp;rsquo;re in luck.&lt;/p&gt;
+&lt;p&gt;Now, to use your GPU, you need three things: latest Firefox, VA-API support in your OS, and a Wayland-based compositor. First one is just &lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y firefox&lt;/code&gt;. Fortunately, latter requirements comes by default with the new Ubuntu 20.04, which despite some &lt;a href=&#34;https://news.ycombinator.com/item?id=23056038&#34;&gt;serious controversies related to its Snap store&lt;/a&gt;, still seems to be most-polished distro out there.&lt;/p&gt;
+&lt;p&gt;Now regarding the compositor: Wayland is still a little experimental, &amp;ldquo;glitches ahead&amp;rdquo; and all, but I&amp;rsquo;m using it for over a week now without any major issues or annoying hiccups. On plus side, it&amp;rsquo;s much smoother than x11 and allows for 4-finger gestures for switching workspaces - just like on macOS. Your mileage may vary, of course.&lt;/p&gt;
+&lt;p&gt;To start Wayland session, simply choose &amp;ldquo;Ubuntu on Wayland&amp;rdquo; on OS login screen (gear icon in bottom-right corner). From now on, Wayland is the default, until you switch to classic, x11-based compositor.&lt;/p&gt;
+&lt;p&gt;Second thing is support for VA-API on your OS. Ubuntu comes with default CLI utility, &lt;code&gt;vainfo&lt;/code&gt; (you can install it with &lt;code&gt;sudo apt-get install vainfo&lt;/code&gt;), just for the purpose of retrieving info on VA-API status. Your output should look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;libva info: VA-API version 1.7.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_7
+libva info: va_openDriver() returns 0
+vainfo: VA-API version: 1.7 (libva 2.6.0)
+vainfo: Driver version: Intel iHD driver for Intel(R) Gen Graphics - 20.1.1 ()
+vainfo: Supported profile and entrypoints
+      VAProfileMPEG2Simple            :	VAEntrypointVLD
+      VAProfileMPEG2Main              :	VAEntrypointVLD
+      VAProfileH264Main               :	VAEntrypointVLD
+      VAProfileH264Main               :	VAEntrypointEncSliceLP
+      VAProfileH264High               :	VAEntrypointVLD
+      VAProfileH264High               :	VAEntrypointEncSliceLP
+      VAProfileJPEGBaseline           :	VAEntrypointVLD
+      VAProfileJPEGBaseline           :	VAEntrypointEncPicture
+      VAProfileH264ConstrainedBaseline:	VAEntrypointVLD
+      VAProfileH264ConstrainedBaseline:	VAEntrypointEncSliceLP
+      VAProfileVP8Version0_3          :	VAEntrypointVLD
+      VAProfileHEVCMain               :	VAEntrypointVLD
+      VAProfileHEVCMain10             :	VAEntrypointVLD
+      VAProfileVP9Profile0            :	VAEntrypointVLD
+      VAProfileVP9Profile2            :	VAEntrypointVLD
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The presence of VP9 profiles is crucial for YouTube videos.&lt;/p&gt;
+&lt;p&gt;If your output lacks this information and you still believe your GPU is able to decode video with hardware support, visit &lt;a href=&#34;https://wiki.archlinux.org/index.php/Hardware_video_acceleration&#34;&gt;this Arch wiki&lt;/a&gt; for further instructions, having in mind that you use Debian-derivative OS, so commands and package names are different.&lt;/p&gt;
+&lt;h3 id=&#34;tweaking-firefox&#34;&gt;Tweaking Firefox&lt;/h3&gt;
+&lt;p&gt;Next step is to tell Firefox to use Wayland. Just edit (with sudo) its &lt;code&gt;/usr/share/applications/firefox.desktop&lt;/code&gt; file and prepend &lt;code&gt;firefox&lt;/code&gt; executable with specific flags, so such line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Exec=firefox %u
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;becomes&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Exec=env MOZ_ENABLE_WAYLAND=1 MOZ_WEBRENDER=1 MOZ_DBUS_REMOTE=1 firefox %u
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and so on; &lt;strong&gt;repeat that for all 3 lines containing &lt;code&gt;Exec=&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now restart Firefox and check if those flags actually work by going to &lt;code&gt;about:support&lt;/code&gt; and checking &lt;code&gt;Window protocol&lt;/code&gt; - its value should be &lt;code&gt;wayland&lt;/code&gt; (or similar), not &lt;code&gt;x11&lt;/code&gt;. If that&amp;rsquo;s not the case, please note that Firefox downloaded directly from Mozilla website instead of installed from PPA (which translates to &amp;ldquo;not installed with &lt;code&gt;apt-get&lt;/code&gt;&amp;rdquo;) might have trouble with using those flags you just pasted.&lt;/p&gt;
+&lt;p&gt;The last step is to enable few flags in Firefox config, so while being in the browser, go to &lt;code&gt;about:config&lt;/code&gt; URL and enable these flags by settings them to &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;widget.wayland-dmabuf-vaapi.enabled
+gfx.webrender.all
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and set this one below to &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;media.ffvpx.enabled
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;verification&#34;&gt;Verification&lt;/h3&gt;
+&lt;p&gt;Restart the browser. Now it&amp;rsquo;s time for one last verification that everything is correct: go to &lt;code&gt;about:support&lt;/code&gt; and verify those params:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://tkainrad.dev/posts/using-hugo-gitlab-pages-and-cloudflare-to-create-and-run-this-website/&#34;&gt;brilliant post by Thomas Kainrad&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;hosting on github pages instructions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Compositing&lt;/code&gt; should be &lt;code&gt;WebRender&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WebGL 1 Driver Version&lt;/code&gt; should say &lt;code&gt;OpenGL something something&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Window Protocol&lt;/code&gt; should be &lt;code&gt;wayland/drm&lt;/code&gt; or similar&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;If that&amp;rsquo;s the case, you&amp;rsquo;re ready to head to YouTube and play some 4K video in fullscreen. In my case, with i7-8650u laptop, watching 4K video on 1440p external screen causes Firefox process to eat ~50% CPU measured in &lt;a href=&#34;https://hisham.hm/htop/&#34;&gt;htop&lt;/a&gt; (before tweaks it was between 100-150%).&lt;/p&gt;
+&lt;p&gt;Overall rendering performance should be improved, too, so scrolling should have much less latency and be much smoother, just like on Windows or macOS. Before these tweaks my Firefox 76 installation scored around 86 points in &lt;a href=&#34;https://browserbench.org/MotionMark/&#34;&gt;MotionMark benchmark&lt;/a&gt;, after applying tweaks the result was 315 points - even higher than Chromium (207), which is known to outperform Firefox severely in rendering benchmarks.&lt;/p&gt;
+&lt;p&gt;One last thing to worry about is that each time you update Firefox, custom flags added in &lt;code&gt;firefox.desktop&lt;/code&gt; will be gone and need to be updated.&lt;/p&gt;
+&lt;p&gt;Have fun browsing&lt;/p&gt;
 </description>
     </item>
     
