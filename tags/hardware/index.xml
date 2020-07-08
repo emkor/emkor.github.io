@@ -1,70 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on emkor&#39;s page</title>
-    <link>https://www.emkor.eu/posts/</link>
-    <description>Recent content in Posts on emkor&#39;s page</description>
+    <title>hardware on emkor&#39;s page</title>
+    <link>https://www.emkor.eu/tags/hardware/</link>
+    <description>Recent content in hardware on emkor&#39;s page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2020 19:59:56 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 15:53:05 +0200</lastBuildDate>
     
-	<atom:link href="https://www.emkor.eu/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.emkor.eu/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Python logging quirk: watch out when calling dictConfig()</title>
-      <link>https://www.emkor.eu/posts/python-logging-quirk/</link>
-      <pubDate>Tue, 07 Jul 2020 19:59:56 +0200</pubDate>
-      
-      <guid>https://www.emkor.eu/posts/python-logging-quirk/</guid>
-      <description>&lt;p&gt;Today, when I urgently needed to debug some weird, 3rd-party library behavior, I&amp;rsquo;ve discovered another treasure in vast fields of Python quirks, this time related to its built-in logging configuration API.&lt;/p&gt;
-&lt;p&gt;The first and quickest thing a typical developer does when in need to gather more details on some reproducible behavior, is to enable more logs, of course. To give some context, my service utilizes Python built-in logging, configured by external JSON file, which in turn is being mounted using &lt;code&gt;volume&lt;/code&gt; directive into the service container. The method I call to actually configure the logging is &lt;code&gt;logging.config.dictConfig&lt;/code&gt;, taking as parameter parsed JSON/YAML in form of &lt;code&gt;Dict&lt;/code&gt;. Here&amp;rsquo;s partial logging config that &lt;strong&gt;resembles&lt;/strong&gt; mine, with non-crucial parts removed:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
-  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,
-  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;formatters&amp;#34;&lt;/span&gt;: {&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;...&lt;/span&gt;},
-  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;handlers&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;console&amp;#34;&lt;/span&gt;: {&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;...&lt;/span&gt;}
-  },
-  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;root&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;handlers&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;console&amp;#34;&lt;/span&gt;],
-    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;level&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;WARNING&amp;#34;&lt;/span&gt;
-  },
-  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;loggers&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;LOGGER_NAME&amp;#34;&lt;/span&gt;: {
-      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;handlers&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;console&amp;#34;&lt;/span&gt;],
-      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;level&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;INFO&amp;#34;&lt;/span&gt;,
-      &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;propagate&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
-    }
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;My services instantiates logger named &lt;code&gt;LOGGER_NAME&lt;/code&gt;, with logging level set to &lt;code&gt;INFO&lt;/code&gt;, which does not propagate to root logger; and the root logger itself, handling all 3rd party loggers, outputting level &lt;code&gt;WARNING&lt;/code&gt; and higher, as usually I don&amp;rsquo;t need their internal specifics. This setup works well, as I don&amp;rsquo;t have to update the configuration each time I change or add 3rd party library, and the config itself might be centralized for all the services in the future.&lt;/p&gt;
-&lt;p&gt;So enabling debug logs would be as easy as editing that JSON file and changing &lt;code&gt;WARNING&lt;/code&gt; to &lt;code&gt;DEBUG&lt;/code&gt; in &lt;code&gt;root&lt;/code&gt; logger and re-running tests. To my surprise, despite this simple change, 3rd party library logs were still missing. After circa 2 hours(!) of furious debugging, I&amp;rsquo;ve found the cause: mighty &lt;code&gt;disable_existing_loggers&lt;/code&gt; parameter.&lt;/p&gt;
-&lt;p&gt;The parameter is buried deep down in &lt;a href=&#34;https://docs.python.org/3/library/logging.config.html#dictionary-schema-details&#34;&gt;Python documentation&lt;/a&gt;, as last documented schema parameter in the section. It isn&amp;rsquo;t a parameter of &lt;code&gt;dictConfig&lt;/code&gt; method (as it is in &lt;code&gt;logging.config.fileConfig&lt;/code&gt;), nor it is mentioned in method docstring. It isn&amp;rsquo;t used in any example configuration snippet in Python documentation, there&amp;rsquo;s no warning notice for it in docs etc.&lt;/p&gt;
-&lt;p&gt;My problem with that parameter is its default, quirky value: it&amp;rsquo;s &lt;code&gt;True&lt;/code&gt;. As a result, calling &lt;code&gt;dictConfig&lt;/code&gt; to configure all the service logging, &lt;strong&gt;disables logging for all instantiated &lt;code&gt;Logger&lt;/code&gt;s instances&lt;/strong&gt; not mentioned in the config. Yup, you read that correctly: it doesn&amp;rsquo;t re-configure existing loggers - despite logging module being &lt;a href=&#34;https://docs.python.org/2/library/logging.html#thread-safety&#34;&gt;thread-safe in Python by design&lt;/a&gt; - doesn&amp;rsquo;t re-create them with new configuration, just sets their logging level to &lt;code&gt;NOTSET&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Now add the fact that Python&amp;rsquo;s import order is as described: first goes Python&amp;rsquo;s built-ins, then 3rd party libraries, and then internal code. As you can see, importing 3rd party libraries takes places before my import, so those libraries can - and often do - instantiate their loggers using code in top-level &lt;code&gt;__init__&lt;/code&gt; files, effectively preceding my setup logging code.&lt;/p&gt;
-&lt;p&gt;And that was exactly my case - imported 3rd party libraries instantiated their loggers before my service called logging setup, which in turn disabled those loggers permanently, due to default parameter value.&lt;/p&gt;
-&lt;p&gt;The fix is simple: just set the parameter to desired value in JSON configuration. But the time wasted on debugging is, well, wasted. For those who just glance over post to see the answer, below you can see fixed configuration:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt; {
-   &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,
-   &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;formatters&amp;#34;&lt;/span&gt;: {&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;...&lt;/span&gt;},
-   &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;handlers&amp;#34;&lt;/span&gt;: {
-     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;console&amp;#34;&lt;/span&gt;: {&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;...&lt;/span&gt;}
-   },
-   &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;root&amp;#34;&lt;/span&gt;: {
-     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;handlers&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;console&amp;#34;&lt;/span&gt;],
-     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;level&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;WARNING&amp;#34;&lt;/span&gt;
-   },
-   &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;loggers&amp;#34;&lt;/span&gt;: {
-     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;LOGGER_NAME&amp;#34;&lt;/span&gt;: {
-       &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;handlers&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;console&amp;#34;&lt;/span&gt;],
-       &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;level&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;INFO&amp;#34;&lt;/span&gt;,
-       &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;propagate&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
-     }
-   },
-  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;disable_existing_loggers&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
- }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
     
     <item>
       <title>Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04 with Wayland</title>
