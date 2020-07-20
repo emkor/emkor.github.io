@@ -191,7 +191,7 @@ gfx.webrender.all
 &lt;p&gt;Commercial experience:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Linux server OSs (Debian, CentOS)&lt;/li&gt;
-&lt;li&gt;Kubernetes platform (overall concept, minikube, kubeadm and kubectl tools)&lt;/li&gt;
+&lt;li&gt;Kubernetes platform (overall concept, minikube, helm, kubeadm and kubectl tools)&lt;/li&gt;
 &lt;li&gt;RabbitMQ message broker (AMQP protocol)&lt;/li&gt;
 &lt;li&gt;SQL databases (PostgreSQL, MySQL) and query language&lt;/li&gt;
 &lt;li&gt;microservices design, concurrent systems&lt;/li&gt;
@@ -202,7 +202,7 @@ gfx.webrender.all
 &lt;/ul&gt;
 &lt;p&gt;Hobby experience:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;terraform, on-premise OpenStack, OpenWRT&lt;/li&gt;
+&lt;li&gt;terraform, on-premise OpenStack, OpenWRT, WireGuard VPN&lt;/li&gt;
 &lt;li&gt;web scraping (scrapy framework)&lt;/li&gt;
 &lt;li&gt;GitHub Actions, Travis CI&lt;/li&gt;
 &lt;/ul&gt;
