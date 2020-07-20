@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Mateusz Korzeniowski">
+    <meta name="description" content="Somewhere in April, me and my fiancée began to look for a place to settle down and build our home. Both of us were growing up in rural Poland, and we have learned the value of nature and spaciousness of countryside in our teenage years, so it&rsquo;s clear that after spending 5 years in rented apartments in Wrocław, we are now convinced the city is no place for us (ongoing pandemic contributed to the decision, too).">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Choosing a place to live using Python"/>
+<meta name="twitter:description" content="Somewhere in April, me and my fiancée began to look for a place to settle down and build our home. Both of us were growing up in rural Poland, and we have learned the value of nature and spaciousness of countryside in our teenage years, so it&rsquo;s clear that after spending 5 years in rented apartments in Wrocław, we are now convinced the city is no place for us (ongoing pandemic contributed to the decision, too)."/>
+
+    <meta property="og:title" content="Choosing a place to live using Python" />
+<meta property="og:description" content="Somewhere in April, me and my fiancée began to look for a place to settle down and build our home. Both of us were growing up in rural Poland, and we have learned the value of nature and spaciousness of countryside in our teenage years, so it&rsquo;s clear that after spending 5 years in rented apartments in Wrocław, we are now convinced the city is no place for us (ongoing pandemic contributed to the decision, too)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.emkor.eu/posts/choosing-a-place-to-live-using-python/" />
+<meta property="article:published_time" content="2020-07-20T18:03:24+02:00" />
+<meta property="article:modified_time" content="2020-07-20T18:03:24+02:00" />
+
+
+    
+      <base href="https://www.emkor.eu/posts/choosing-a-place-to-live-using-python/">
+    
+    <title>
+  Choosing a place to live using Python · emkor&#39;s page
+</title>
+
+    
+      <link rel="canonical" href="https://www.emkor.eu/posts/choosing-a-place-to-live-using-python/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.emkor.eu/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.emkor.eu/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.68.3" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      emkor&#39;s page
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.emkor.eu/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.emkor.eu/projects">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.emkor.eu/about">About</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Choosing a place to live using Python</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-07-20T18:03:24&#43;02:00'>
+                July 20, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="/tags/python/">python</a>
+      <span class="separator">•</span>
+    <a href="/tags/geojson/">geojson</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>Somewhere in April, me and my fiancée began to look for a place to settle down and build our home. Both of us were growing up in rural Poland, and we have learned the value of nature and spaciousness of countryside in our teenage years, so it&rsquo;s clear that after spending 5 years in rented apartments in Wrocław, we are now convinced the city is no place for us (ongoing pandemic contributed to the decision, too).</p>
+<p>Given this context, our preferences for a perfect place are as follows:</p>
+<ul>
+<li>&lt;30 minutes one-way drive to Wrocław, where we both work</li>
+<li>it should be nearby our families and friends (most of them live north of Wrocław)</li>
+<li>closeness to forest, bonus points for stunning view on the forest or hills :)</li>
+<li>for working from home purposes, any good-quality broadband connection (using LTE as home internet, as it&rsquo;s usual in rural Poland in the absence of cable broadband isn&rsquo;t acceptable)</li>
+<li>bonus points for alternative way (other than by-car) to reach the city, i.e. public transit</li>
+<li>bonus points for closeness of elementary school, as we plan having children in near future</li>
+<li>as cheap as possible</li>
+</ul>
+<p>After a quick glance at the map and estate market, I realized there&rsquo;s simply too much info for me to process and make the informed decision: in the area of our broad interest, there&rsquo;s well over 300 villages, and as I calculated later over scraped data, there&rsquo;s over 1,500 active offers scattered across 3 largest estate offer providers. Adding the fact that those providers let sellers to &ldquo;refresh&rdquo; their offer to look like it&rsquo;s added today on top of the daily offers, it was impossible for me to tell which offer is actually new and worth interesting.</p>
+<p>So I decided to gather the data and throw some markers on the map to see the options more clearly. Fast-forward three months of <del>scraping</del> gathering the data and 900 lines of code later, I can honestly say it was worth it.</p>
+<p>To give you an idea of process of building my data-map, I&rsquo;d start with listing worthy data sources:</p>
+<blockquote>
+<p>&ldquo;&lt;30 minutes one-way drive to Wrocław, where we both work&rdquo;</p>
+</blockquote>
+<p>This requirement was the most difficult for me until I discovered <code>openrouteservice.org</code>, where it&rsquo;s easy to create a GeoJSON-exportable isochrone map displaying <a href="http://maps.openrouteservice.org/reach?n1=51.187521&amp;n2=17.002029&amp;n3=10&amp;a=51.118709,16.987459&amp;b=0&amp;i=0&amp;j1=56&amp;j2=7&amp;j3=1&amp;k1=en-US&amp;k2=km">time to reach a destination by car</a>, which in my case was a large shopping mall in Wrocław.</p>
+<figure>
+    <img src="/images/choosing-place-to-live-with-python-openrouter-service.jpg"/> 
+</figure>
+
+<blockquote>
+<p>&ldquo;for working from home purposes, any good-quality broadband connection&rdquo;</p>
+</blockquote>
+<p>Since 2014, there&rsquo;s an ongoing effort carried by Polish Ministry of Digital Affairs (with funding from European Union, of course) to build a fiber-optics-based network in small villages across Poland, which for me is a game changer in terms of quality of life in Polish countryside. On the Ministry website, there is <a href="https://wyszukiwarka.uke.gov.pl/">a service for rendering (and exporting) data on availability of ISP services across country</a>, which I used to export the data into CSV and use Python to turn it into GeoJSON format.</p>
+<blockquote>
+<p>&ldquo;as cheap as possible&rdquo;</p>
+</blockquote>
+<p>To gather pricing information so it&rsquo;s easy to see how pricing changes across the villages, I ran a daily scraper using popular CI service for three main estate offer listings since April, outputting most valuable data into CSV files. Then those files would get inserted into SQLite DB, and with some SQL queries, I got average price per square meter in each village or town and truly recent offers. Then it was just a matter of rendering the data into some inter-operable format, like GeoJSON.</p>
+<p>To make data visual and put it on the map without writing JavaScript code (which I&rsquo;m not fond of), I decided to use <a href="http://geojson.io/#map=2/20.0/0.0">geojson.io</a> as WebUI. The site lets you render any arbitrary GeoJSON file directly onto Mapbox, and since it supports storing and loading the data as Gists, it was a no-brainer: the final artifact is easy to export as Gist anyway.</p>
+<p>You can see the end results <a href="http://geojson.io/#id=gist:emkor/51ce817d1bca483b3bd0532b8e00233c&amp;map=13/51.2503/17.0329">here</a> (it takes a few seconds to load).</p>
+<figure>
+    <img src="/images/choosing-place-to-live-with-python-result.jpg"/> 
+</figure>
+
+<p>The code for all these transformations (but without the scraping part) is available <a href="https://github.com/emkor/estate-analysis">on my GitHub</a>.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+
+    
+
+    
+
+  </body>
+
+</html>

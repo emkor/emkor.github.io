@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.emkor.eu/posts/choosing-a-place-to-live-using-python/</loc>
+    <lastmod>2020-07-20T18:03:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.emkor.eu/tags/geojson/</loc>
+    <lastmod>2020-07-20T18:03:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.emkor.eu/posts/</loc>
+    <lastmod>2020-07-20T18:03:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.emkor.eu/tags/python/</loc>
+    <lastmod>2020-07-20T18:03:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.emkor.eu/tags/</loc>
+    <lastmod>2020-07-20T18:03:24+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.emkor.eu/tags/logging/</loc>
     <lastmod>2020-07-07T19:59:56+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.emkor.eu/posts/</loc>
-    <lastmod>2020-07-07T19:59:56+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.emkor.eu/tags/python/</loc>
-    <lastmod>2020-07-07T19:59:56+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.emkor.eu/posts/python-logging-quirk/</loc>
-    <lastmod>2020-07-07T19:59:56+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.emkor.eu/tags/</loc>
     <lastmod>2020-07-07T19:59:56+02:00</lastmod>
   </url>
   

@@ -12,6 +12,52 @@
     
     
     <item>
+      <title>Choosing a place to live using Python</title>
+      <link>https://www.emkor.eu/posts/choosing-a-place-to-live-using-python/</link>
+      <pubDate>Mon, 20 Jul 2020 18:03:24 +0200</pubDate>
+      
+      <guid>https://www.emkor.eu/posts/choosing-a-place-to-live-using-python/</guid>
+      <description>&lt;p&gt;Somewhere in April, me and my fiancée began to look for a place to settle down and build our home. Both of us were growing up in rural Poland, and we have learned the value of nature and spaciousness of countryside in our teenage years, so it&amp;rsquo;s clear that after spending 5 years in rented apartments in Wrocław, we are now convinced the city is no place for us (ongoing pandemic contributed to the decision, too).&lt;/p&gt;
+&lt;p&gt;Given this context, our preferences for a perfect place are as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;30 minutes one-way drive to Wrocław, where we both work&lt;/li&gt;
+&lt;li&gt;it should be nearby our families and friends (most of them live north of Wrocław)&lt;/li&gt;
+&lt;li&gt;closeness to forest, bonus points for stunning view on the forest or hills :)&lt;/li&gt;
+&lt;li&gt;for working from home purposes, any good-quality broadband connection (using LTE as home internet, as it&amp;rsquo;s usual in rural Poland in the absence of cable broadband isn&amp;rsquo;t acceptable)&lt;/li&gt;
+&lt;li&gt;bonus points for alternative way (other than by-car) to reach the city, i.e. public transit&lt;/li&gt;
+&lt;li&gt;bonus points for closeness of elementary school, as we plan having children in near future&lt;/li&gt;
+&lt;li&gt;as cheap as possible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After a quick glance at the map and estate market, I realized there&amp;rsquo;s simply too much info for me to process and make the informed decision: in the area of our broad interest, there&amp;rsquo;s well over 300 villages, and as I calculated later over scraped data, there&amp;rsquo;s over 1,500 active offers scattered across 3 largest estate offer providers. Adding the fact that those providers let sellers to &amp;ldquo;refresh&amp;rdquo; their offer to look like it&amp;rsquo;s added today on top of the daily offers, it was impossible for me to tell which offer is actually new and worth interesting.&lt;/p&gt;
+&lt;p&gt;So I decided to gather the data and throw some markers on the map to see the options more clearly. Fast-forward three months of &lt;del&gt;scraping&lt;/del&gt; gathering the data and 900 lines of code later, I can honestly say it was worth it.&lt;/p&gt;
+&lt;p&gt;To give you an idea of process of building my data-map, I&amp;rsquo;d start with listing worthy data sources:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;&amp;lt;30 minutes one-way drive to Wrocław, where we both work&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This requirement was the most difficult for me until I discovered &lt;code&gt;openrouteservice.org&lt;/code&gt;, where it&amp;rsquo;s easy to create a GeoJSON-exportable isochrone map displaying &lt;a href=&#34;http://maps.openrouteservice.org/reach?n1=51.187521&amp;amp;n2=17.002029&amp;amp;n3=10&amp;amp;a=51.118709,16.987459&amp;amp;b=0&amp;amp;i=0&amp;amp;j1=56&amp;amp;j2=7&amp;amp;j3=1&amp;amp;k1=en-US&amp;amp;k2=km&#34;&gt;time to reach a destination by car&lt;/a&gt;, which in my case was a large shopping mall in Wrocław.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.emkor.eu/images/choosing-place-to-live-with-python-openrouter-service.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;for working from home purposes, any good-quality broadband connection&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Since 2014, there&amp;rsquo;s an ongoing effort carried by Polish Ministry of Digital Affairs (with funding from European Union, of course) to build a fiber-optics-based network in small villages across Poland, which for me is a game changer in terms of quality of life in Polish countryside. On the Ministry website, there is &lt;a href=&#34;https://wyszukiwarka.uke.gov.pl/&#34;&gt;a service for rendering (and exporting) data on availability of ISP services across country&lt;/a&gt;, which I used to export the data into CSV and use Python to turn it into GeoJSON format.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;as cheap as possible&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To gather pricing information so it&amp;rsquo;s easy to see how pricing changes across the villages, I ran a daily scraper using popular CI service for three main estate offer listings since April, outputting most valuable data into CSV files. Then those files would get inserted into SQLite DB, and with some SQL queries, I got average price per square meter in each village or town and truly recent offers. Then it was just a matter of rendering the data into some inter-operable format, like GeoJSON.&lt;/p&gt;
+&lt;p&gt;To make data visual and put it on the map without writing JavaScript code (which I&amp;rsquo;m not fond of), I decided to use &lt;a href=&#34;http://geojson.io/#map=2/20.0/0.0&#34;&gt;geojson.io&lt;/a&gt; as WebUI. The site lets you render any arbitrary GeoJSON file directly onto Mapbox, and since it supports storing and loading the data as Gists, it was a no-brainer: the final artifact is easy to export as Gist anyway.&lt;/p&gt;
+&lt;p&gt;You can see the end results &lt;a href=&#34;http://geojson.io/#id=gist:emkor/51ce817d1bca483b3bd0532b8e00233c&amp;amp;map=13/51.2503/17.0329&#34;&gt;here&lt;/a&gt; (it takes a few seconds to load).&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.emkor.eu/images/choosing-place-to-live-with-python-result.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;The code for all these transformations (but without the scraping part) is available &lt;a href=&#34;https://github.com/emkor/estate-analysis&#34;&gt;on my GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Python logging quirk: watch out when calling dictConfig()</title>
       <link>https://www.emkor.eu/posts/python-logging-quirk/</link>
       <pubDate>Tue, 07 Jul 2020 19:59:56 +0200</pubDate>
@@ -139,20 +185,26 @@ gfx.webrender.all
       <description>&lt;h4 id=&#34;coding-for-living-since-2013&#34;&gt;Coding for living since 2013&lt;/h4&gt;
 &lt;p&gt;Expertise:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Python 2, 3, basics of asyncio&lt;/li&gt;
+&lt;li&gt;Python 3, basics of asyncio&lt;/li&gt;
 &lt;li&gt;Docker containers&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Experience:&lt;/p&gt;
+&lt;p&gt;Commercial experience:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Linux servers&lt;/li&gt;
-&lt;li&gt;Kubernetes platform (concept, minikube, kubeadm)&lt;/li&gt;
-&lt;li&gt;Java 8 (1.5 year in enterprise project)&lt;/li&gt;
+&lt;li&gt;Linux server OSs (Debian, CentOS)&lt;/li&gt;
+&lt;li&gt;Kubernetes platform (overall concept, minikube, kubeadm and kubectl tools)&lt;/li&gt;
 &lt;li&gt;RabbitMQ message broker (AMQP protocol)&lt;/li&gt;
 &lt;li&gt;SQL databases (PostgreSQL, MySQL) and query language&lt;/li&gt;
 &lt;li&gt;microservices design, concurrent systems&lt;/li&gt;
-&lt;li&gt;various CI tools (GitLab Pipelines, Jenkins, Travis CI, Bamboo CI, GitHub Actions)&lt;/li&gt;
-&lt;li&gt;devops (ansible, terraform, OpenStack, OpenWRT, infrastructure-as-a-code patterns)&lt;/li&gt;
-&lt;li&gt;Agile methodology using LeSS framework&lt;/li&gt;
+&lt;li&gt;Java 8 (1.5 year in enterprise project)&lt;/li&gt;
+&lt;li&gt;GitLab Pipelines, Jenkins CI tools&lt;/li&gt;
+&lt;li&gt;DevOps (ansible, infrastructure-as-a-code patterns)&lt;/li&gt;
+&lt;li&gt;Agile methodology, LeSS framework&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hobby experience:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;terraform, on-premise OpenStack, OpenWRT&lt;/li&gt;
+&lt;li&gt;web scraping (scrapy framework)&lt;/li&gt;
+&lt;li&gt;GitHub Actions, Travis CI&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Interested in, but not much experience:&lt;/p&gt;
 &lt;ul&gt;
@@ -160,10 +212,10 @@ gfx.webrender.all
 &lt;li&gt;machine learning&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;open-source&#34;&gt;Open-source&lt;/h4&gt;
-&lt;p&gt;See &lt;a href=&#34;https://www.emkor.eu/projects/&#34;&gt;Projects&lt;/a&gt; for some of my open source work&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://www.emkor.eu/projects/&#34;&gt;Projects&lt;/a&gt; for some of my work&lt;/p&gt;
 &lt;h4 id=&#34;contact&#34;&gt;Contact&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;email &lt;a href=&#34;mailto:emkor93@gmail.com&#34;&gt;emkor93@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;mailto:emkor93@gmail.com&#34;&gt;emkor93@gmail.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/mateusz-korzeniowski-4aa472131/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
