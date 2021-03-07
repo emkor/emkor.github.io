@@ -1,84 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://www.emkor.eu/posts/choosing-a-place-to-live-using-python/</loc>
     <lastmod>2020-07-20T18:03:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://www.emkor.eu/</loc>
+    <lastmod>2020-07-20T18:03:24+02:00</lastmod>
+  </url><url>
     <loc>https://www.emkor.eu/tags/geojson/</loc>
     <lastmod>2020-07-20T18:03:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/posts/</loc>
     <lastmod>2020-07-20T18:03:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/tags/python/</loc>
     <lastmod>2020-07-20T18:03:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/tags/</loc>
     <lastmod>2020-07-20T18:03:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/tags/logging/</loc>
     <lastmod>2020-07-07T19:59:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/posts/python-logging-quirk/</loc>
     <lastmod>2020-07-07T19:59:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/posts/gpu-acceleration-in-firefox76/</loc>
     <lastmod>2020-05-06T15:53:05+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/tags/firefox/</loc>
     <lastmod>2020-05-06T15:53:05+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/tags/gpu/</loc>
     <lastmod>2020-05-06T15:53:05+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/tags/hardware/</loc>
     <lastmod>2020-05-06T15:53:05+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/tags/linux/</loc>
     <lastmod>2020-05-06T15:53:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.emkor.eu/</loc>
-    <lastmod>2020-05-04T08:59:04+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/about/</loc>
     <lastmod>2020-05-04T08:59:04+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/projects/</loc>
     <lastmod>2020-05-04T08:59:04+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.emkor.eu/series/</loc>
   </url>
-  
 </urlset>

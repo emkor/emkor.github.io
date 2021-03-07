@@ -6,7 +6,7 @@
     <description>Recent content on emkor&#39;s page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 May 2020 08:59:04 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2020 18:03:24 +0200</lastBuildDate>
     
 	<atom:link href="https://www.emkor.eu/index.xml" rel="self" type="application/rss+xml" />
     
@@ -156,7 +156,7 @@ vainfo: Supported profile and entrypoints
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;becomes&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Exec=env MOZ_ENABLE_WAYLAND=1 MOZ_WEBRENDER=1 MOZ_DBUS_REMOTE=1 firefox %u
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and so on; &lt;strong&gt;repeat that for all 3 lines containing &lt;code&gt;Exec=&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Now restart Firefox and check if those flags actually work by going to &lt;code&gt;about:support&lt;/code&gt; and checking &lt;code&gt;Window protocol&lt;/code&gt; - its value should be &lt;code&gt;wayland&lt;/code&gt; (or similar), not &lt;code&gt;x11&lt;/code&gt;. If that&amp;rsquo;s not the case, please note that Firefox downloaded directly from Mozilla website instead of installed from PPA (which translates to &amp;ldquo;not installed with &lt;code&gt;apt-get&lt;/code&gt;&amp;rdquo;) might have trouble with using those flags you just pasted.&lt;/p&gt;
+&lt;p&gt;Now restart Firefox and check if those flags actually work by going to &lt;code&gt;about:support&lt;/code&gt; and checking &lt;code&gt;Window protocol&lt;/code&gt; - its value should be &lt;code&gt;wayland&lt;/code&gt; (or similar), not &lt;code&gt;x11&lt;/code&gt;. If that&amp;rsquo;s not the case, please note that Firefox downloaded directly from Mozilla website instead of installed from PPA (which translates to &amp;ldquo;not installed with &lt;code&gt;apt-get&lt;/code&gt;&amp;quot;) might have trouble with using those flags you just pasted.&lt;/p&gt;
 &lt;p&gt;The last step is to enable few flags in Firefox config, so while being in the browser, go to &lt;code&gt;about:config&lt;/code&gt; URL and enable these flags by settings them to &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;widget.wayland-dmabuf-vaapi.enabled
 gfx.webrender.all
@@ -182,36 +182,37 @@ gfx.webrender.all
       <pubDate>Mon, 04 May 2020 08:59:04 +0200</pubDate>
       
       <guid>https://www.emkor.eu/about/</guid>
-      <description>&lt;h4 id=&#34;coding-for-living-since-2013&#34;&gt;Coding for living since 2013&lt;/h4&gt;
-&lt;p&gt;Expertise:&lt;/p&gt;
+      <description>&lt;h3 id=&#34;coding-for-living-since-2013&#34;&gt;Coding for living since 2013&lt;/h3&gt;
+&lt;h4 id=&#34;expertise&#34;&gt;Expertise&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Python 3, basics of asyncio&lt;/li&gt;
 &lt;li&gt;Docker containers&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Commercial experience:&lt;/p&gt;
+&lt;h4 id=&#34;commercial-experience&#34;&gt;Commercial experience&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Linux server OSs (Debian, CentOS)&lt;/li&gt;
-&lt;li&gt;Kubernetes platform (overall concept, minikube, helm, kubeadm and kubectl tools)&lt;/li&gt;
 &lt;li&gt;RabbitMQ message broker (AMQP protocol)&lt;/li&gt;
 &lt;li&gt;SQL databases (PostgreSQL, MySQL) and query language&lt;/li&gt;
+&lt;li&gt;Linux server OSs (Debian, CentOS)&lt;/li&gt;
+&lt;li&gt;Kubernetes platform (overall concept, minikube, kubeadm and kubectl tools)&lt;/li&gt;
 &lt;li&gt;microservices design, concurrent systems&lt;/li&gt;
-&lt;li&gt;Java 8 (1.5 year in enterprise project)&lt;/li&gt;
+&lt;li&gt;Java (1.5 year in enterprise projects)&lt;/li&gt;
 &lt;li&gt;GitLab Pipelines, Jenkins CI tools&lt;/li&gt;
 &lt;li&gt;DevOps (ansible, infrastructure-as-a-code patterns)&lt;/li&gt;
 &lt;li&gt;Agile methodology, LeSS framework&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Hobby experience:&lt;/p&gt;
+&lt;h4 id=&#34;hobby-experience&#34;&gt;Hobby experience:&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;terraform, on-premise OpenStack, OpenWRT, WireGuard VPN&lt;/li&gt;
+&lt;li&gt;terraform, on-premise OpenStack, OpenWRT&lt;/li&gt;
 &lt;li&gt;web scraping (scrapy framework)&lt;/li&gt;
+&lt;li&gt;WireGuard VPN (self-hosting a VPN for me and relatives)&lt;/li&gt;
 &lt;li&gt;GitHub Actions, Travis CI&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Interested in, but not much experience:&lt;/p&gt;
+&lt;h4 id=&#34;not-much-experience-but-still-interested&#34;&gt;Not much experience, but still interested&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Golang, front-end Javascript&lt;/li&gt;
 &lt;li&gt;machine learning&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;open-source&#34;&gt;Open-source&lt;/h4&gt;
+&lt;h4 id=&#34;open-source-work&#34;&gt;Open-source work&lt;/h4&gt;
 &lt;p&gt;See &lt;a href=&#34;https://www.emkor.eu/projects/&#34;&gt;Projects&lt;/a&gt; for some of my work&lt;/p&gt;
 &lt;h4 id=&#34;contact&#34;&gt;Contact&lt;/h4&gt;
 &lt;ul&gt;
@@ -227,22 +228,18 @@ gfx.webrender.all
       <pubDate>Mon, 04 May 2020 08:59:04 +0200</pubDate>
       
       <guid>https://www.emkor.eu/projects/</guid>
-      <description>&lt;h4 id=&#34;libraries--tools--services&#34;&gt;Libraries / tools / services&lt;/h4&gt;
+      <description>&lt;h4 id=&#34;maintained&#34;&gt;Maintained&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;built &lt;a href=&#34;https://github.com/emkor/recogn-img&#34;&gt;own library&lt;/a&gt; for image recognition on CCTV camera images, with &lt;a href=&#34;https://pjreddie.com/darknet/yolo/&#34;&gt;YOLO model&lt;/a&gt; included , packaged and published as &lt;a href=&#34;https://hub.docker.com/repository/docker/emkor/recogn-img&#34;&gt;docker image&lt;/a&gt; for convenience&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.emkor.eu/curator/&#34;&gt;I&amp;rsquo;ve built Spotify playlist manager (alpha-stage!)&lt;/a&gt; using &lt;a href=&#34;https://vuejs.org/&#34;&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/emkor/napi-py&#34;&gt;CLI tool for downloading movie subtitles&lt;/a&gt; published on &lt;a href=&#34;https://pypi.org/project/napi-py/&#34;&gt;pypi&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;(abandoned) &lt;a href=&#34;https://github.com/emkor/audiopyle&#34;&gt;audio feature extraction engine&lt;/a&gt; in microservice design, deployed on &lt;a href=&#34;https://www.docker.com/products/container-runtime&#34;&gt;Docker&lt;/a&gt;, backed by &lt;a href=&#34;http://www.celeryproject.org/&#34;&gt;Celery&lt;/a&gt;, &lt;a href=&#34;https://www.rabbitmq.com/&#34;&gt;RabbitMQ&lt;/a&gt; and &lt;a href=&#34;https://www.mysql.com&#34;&gt;MySQL&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/emkor/mpyk&#34;&gt;library&lt;/a&gt; for retrieving geolocation data for Wrocław public transit (tram and buses, basically)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;published-data&#34;&gt;Published data&lt;/h4&gt;
-&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/emkor/napi-py&#34;&gt;library and CLI tool&lt;/a&gt; for downloading movie subtitles from &lt;a href=&#34;https://www.napiprojekt.pl/&#34;&gt;Napi Projekt&lt;/a&gt; (mainly Polish subs), fork of &lt;a href=&#34;https://github.com/gabrys/napi.py&#34;&gt;gabrys/napi.py&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;harvesting and publishing &lt;a href=&#34;https://www.emkor.eu/mpyk&#34;&gt;Wrocław public transit geolocation data&lt;/a&gt; using &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;Backblaze B2 service&lt;/a&gt; and Raspberry Pi hidden in my wardrobe :)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;instructions--tutorials&#34;&gt;Instructions / tutorials&lt;/h4&gt;
+&lt;h4 id=&#34;archived&#34;&gt;Archived&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;self-hosting &lt;a href=&#34;https://www.openstack.org/&#34;&gt;OpenStack-based&lt;/a&gt; homelab server &lt;a href=&#34;https://github.com/emkor/infra-homelab&#34;&gt;with instructions&lt;/a&gt; backed by &lt;a href=&#34;https://www.rdoproject.org/install/packstack&#34;&gt;Packstack&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;this website/blog :)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.emkor.eu/curator/&#34;&gt;Spotify playlist manager&lt;/a&gt; with Web UI built with &lt;a href=&#34;https://vuejs.org/&#34;&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/repository/docker/emkor/recogn-img&#34;&gt;Docker image&lt;/a&gt; exposing API performing object detection on images from CCTV cameras, with &lt;a href=&#34;https://pjreddie.com/darknet/yolo/&#34;&gt;YOLO model&lt;/a&gt; included; &lt;a href=&#34;https://github.com/emkor/recogn-img&#34;&gt;code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;HTTP API-based &lt;a href=&#34;https://github.com/emkor/audiopyle&#34;&gt;audio feature extraction engine&lt;/a&gt; in using microservice design, deployed on &lt;a href=&#34;https://www.docker.com/products/container-runtime&#34;&gt;Docker&lt;/a&gt;, backed by &lt;a href=&#34;http://www.celeryproject.org/&#34;&gt;Celery&lt;/a&gt;, &lt;a href=&#34;https://www.rabbitmq.com/&#34;&gt;RabbitMQ&lt;/a&gt; and &lt;a href=&#34;https://www.mysql.com&#34;&gt;MySQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Instructions for self-hosting &lt;a href=&#34;https://www.openstack.org/&#34;&gt;OpenStack-based&lt;/a&gt; homelab server &lt;a href=&#34;https://github.com/emkor/infra-homelab&#34;&gt;with instructions&lt;/a&gt; backed by &lt;a href=&#34;https://www.rdoproject.org/install/packstack&#34;&gt;Packstack&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
