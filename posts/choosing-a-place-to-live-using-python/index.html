@@ -18,8 +18,8 @@
 <meta property="og:description" content="Somewhere in April, me and my fiancée began to look for a place to settle down and build our home. Both of us were growing up in rural Poland, and we have learned the value of nature and spaciousness of countryside in our teenage years, so it&rsquo;s clear that after spending 5 years in rented apartments in Wrocław, we are now convinced the city is no place for us (ongoing pandemic contributed to the decision, too)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.emkor.eu/posts/choosing-a-place-to-live-using-python/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-07-20T18:03:24&#43;02:00" />
-<meta property="article:modified_time" content="2020-07-20T18:03:24&#43;02:00" />
+<meta property="article:published_time" content="2020-07-20T18:03:24+02:00" />
+<meta property="article:modified_time" content="2020-07-20T18:03:24+02:00" />
 
 
 
@@ -55,7 +55,7 @@
     <link rel="icon" type="image/png" href="https://www.emkor.eu/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://www.emkor.eu/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="generator" content="Hugo 0.90.1" />
   </head>
 
   
@@ -144,8 +144,7 @@
 <p>&ldquo;&lt;30 minutes one-way drive to Wrocław, where we both work&rdquo;</p>
 </blockquote>
 <p>This requirement was the most difficult for me until I discovered <code>openrouteservice.org</code>, where it&rsquo;s easy to create a GeoJSON-exportable isochrone map displaying <a href="http://maps.openrouteservice.org/reach?n1=51.187521&amp;n2=17.002029&amp;n3=10&amp;a=51.118709,16.987459&amp;b=0&amp;i=0&amp;j1=56&amp;j2=7&amp;j3=1&amp;k1=en-US&amp;k2=km">time to reach a destination by car</a>, which in my case was a large shopping mall in Wrocław.</p>
-<figure>
-    <img src="/images/choosing-place-to-live-with-python-openrouter-service.jpg"/> 
+<figure><img src="/images/choosing-place-to-live-with-python-openrouter-service.jpg"/>
 </figure>
 
 <blockquote>
@@ -158,8 +157,7 @@
 <p>To gather pricing information so it&rsquo;s easy to see how pricing changes across the villages, I ran a daily scraper using popular CI service for three main estate offer listings since April, outputting most valuable data into CSV files. Then those files would get inserted into SQLite DB, and with some SQL queries, I got average price per square meter in each village or town and truly recent offers. Then it was just a matter of rendering the data into some inter-operable format, like GeoJSON.</p>
 <p>To make data visual and put it on the map without writing JavaScript code (which I&rsquo;m not fond of), I decided to use <a href="http://geojson.io/#map=2/20.0/0.0">geojson.io</a> as WebUI. The site lets you render any arbitrary GeoJSON file directly onto Mapbox, and since it supports storing and loading the data as Gists, it was a no-brainer: the final artifact is easy to export as Gist anyway.</p>
 <p>You can see the end results <a href="http://geojson.io/#id=gist:emkor/51ce817d1bca483b3bd0532b8e00233c&amp;map=13/51.2503/17.0329">here</a> (it takes a few seconds to load).</p>
-<figure>
-    <img src="/images/choosing-place-to-live-with-python-result.jpg"/> 
+<figure><img src="/images/choosing-place-to-live-with-python-result.jpg"/>
 </figure>
 
 <p>The code for all these transformations (but without the scraping part) is available <a href="https://github.com/emkor/estate-analysis">on my GitHub</a>.</p>

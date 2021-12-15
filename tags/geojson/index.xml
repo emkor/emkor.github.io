@@ -35,8 +35,7 @@
 &lt;p&gt;&amp;ldquo;&amp;lt;30 minutes one-way drive to Wrocław, where we both work&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This requirement was the most difficult for me until I discovered &lt;code&gt;openrouteservice.org&lt;/code&gt;, where it&amp;rsquo;s easy to create a GeoJSON-exportable isochrone map displaying &lt;a href=&#34;http://maps.openrouteservice.org/reach?n1=51.187521&amp;amp;n2=17.002029&amp;amp;n3=10&amp;amp;a=51.118709,16.987459&amp;amp;b=0&amp;amp;i=0&amp;amp;j1=56&amp;amp;j2=7&amp;amp;j3=1&amp;amp;k1=en-US&amp;amp;k2=km&#34;&gt;time to reach a destination by car&lt;/a&gt;, which in my case was a large shopping mall in Wrocław.&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img src=&#34;https://www.emkor.eu/images/choosing-place-to-live-with-python-openrouter-service.jpg&#34;/&gt; 
+&lt;figure&gt;&lt;img src=&#34;https://www.emkor.eu/images/choosing-place-to-live-with-python-openrouter-service.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;blockquote&gt;
@@ -49,8 +48,7 @@
 &lt;p&gt;To gather pricing information so it&amp;rsquo;s easy to see how pricing changes across the villages, I ran a daily scraper using popular CI service for three main estate offer listings since April, outputting most valuable data into CSV files. Then those files would get inserted into SQLite DB, and with some SQL queries, I got average price per square meter in each village or town and truly recent offers. Then it was just a matter of rendering the data into some inter-operable format, like GeoJSON.&lt;/p&gt;
 &lt;p&gt;To make data visual and put it on the map without writing JavaScript code (which I&amp;rsquo;m not fond of), I decided to use &lt;a href=&#34;http://geojson.io/#map=2/20.0/0.0&#34;&gt;geojson.io&lt;/a&gt; as WebUI. The site lets you render any arbitrary GeoJSON file directly onto Mapbox, and since it supports storing and loading the data as Gists, it was a no-brainer: the final artifact is easy to export as Gist anyway.&lt;/p&gt;
 &lt;p&gt;You can see the end results &lt;a href=&#34;http://geojson.io/#id=gist:emkor/51ce817d1bca483b3bd0532b8e00233c&amp;amp;map=13/51.2503/17.0329&#34;&gt;here&lt;/a&gt; (it takes a few seconds to load).&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img src=&#34;https://www.emkor.eu/images/choosing-place-to-live-with-python-result.jpg&#34;/&gt; 
+&lt;figure&gt;&lt;img src=&#34;https://www.emkor.eu/images/choosing-place-to-live-with-python-result.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;The code for all these transformations (but without the scraping part) is available &lt;a href=&#34;https://github.com/emkor/estate-analysis&#34;&gt;on my GitHub&lt;/a&gt;.&lt;/p&gt;

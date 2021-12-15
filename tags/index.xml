@@ -6,10 +6,46 @@
     <description>Recent content in Tags on emkor&#39;s page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jul 2020 18:03:24 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 14 Dec 2021 16:12:07 +0100</lastBuildDate>
     
 	<atom:link href="https://www.emkor.eu/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>firefox</title>
+      <link>https://www.emkor.eu/tags/firefox/</link>
+      <pubDate>Tue, 14 Dec 2021 16:12:07 +0100</pubDate>
+      
+      <guid>https://www.emkor.eu/tags/firefox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>media</title>
+      <link>https://www.emkor.eu/tags/media/</link>
+      <pubDate>Tue, 14 Dec 2021 16:12:07 +0100</pubDate>
+      
+      <guid>https://www.emkor.eu/tags/media/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>search</title>
+      <link>https://www.emkor.eu/tags/search/</link>
+      <pubDate>Tue, 14 Dec 2021 16:12:07 +0100</pubDate>
+      
+      <guid>https://www.emkor.eu/tags/search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://www.emkor.eu/tags/web/</link>
+      <pubDate>Tue, 14 Dec 2021 16:12:07 +0100</pubDate>
+      
+      <guid>https://www.emkor.eu/tags/web/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>geojson</title>
@@ -35,15 +71,6 @@
       <pubDate>Tue, 07 Jul 2020 19:59:56 +0200</pubDate>
       
       <guid>https://www.emkor.eu/tags/logging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>firefox</title>
-      <link>https://www.emkor.eu/tags/firefox/</link>
-      <pubDate>Wed, 06 May 2020 15:53:05 +0200</pubDate>
-      
-      <guid>https://www.emkor.eu/tags/firefox/</guid>
       <description></description>
     </item>
     

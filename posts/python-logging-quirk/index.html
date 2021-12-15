@@ -21,8 +21,8 @@ The first and quickest thing a typical developer does when in need to gather mor
 The first and quickest thing a typical developer does when in need to gather more details on some reproducible behavior, is to enable more logs, of course. To give some context, my service utilizes Python built-in logging, configured by external JSON file, which in turn is being mounted using volume directive into the service container." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.emkor.eu/posts/python-logging-quirk/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-07-07T19:59:56&#43;02:00" />
-<meta property="article:modified_time" content="2020-07-07T19:59:56&#43;02:00" />
+<meta property="article:published_time" content="2020-07-07T19:59:56+02:00" />
+<meta property="article:modified_time" content="2020-07-07T19:59:56+02:00" />
 
 
 
@@ -58,7 +58,7 @@ The first and quickest thing a typical developer does when in need to gather mor
     <link rel="icon" type="image/png" href="https://www.emkor.eu/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://www.emkor.eu/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="generator" content="Hugo 0.90.1" />
   </head>
 
   
@@ -131,7 +131,7 @@ The first and quickest thing a typical developer does when in need to gather mor
         
         <p>Today, when I urgently needed to debug some weird, 3rd-party library behavior, I&rsquo;ve discovered another treasure in vast fields of Python quirks, this time related to its built-in logging configuration API.</p>
 <p>The first and quickest thing a typical developer does when in need to gather more details on some reproducible behavior, is to enable more logs, of course. To give some context, my service utilizes Python built-in logging, configured by external JSON file, which in turn is being mounted using <code>volume</code> directive into the service container. The method I call to actually configure the logging is <code>logging.config.dictConfig</code>, taking as parameter parsed JSON/YAML in form of <code>Dict</code>. Here&rsquo;s partial logging config that <strong>resembles</strong> mine, with non-crucial parts removed:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#ae81ff">1</span>,
   <span style="color:#f92672">&#34;formatters&#34;</span>: {<span style="color:#960050;background-color:#1e0010">...</span>},
   <span style="color:#f92672">&#34;handlers&#34;</span>: {
@@ -156,7 +156,7 @@ The first and quickest thing a typical developer does when in need to gather mor
 <p>Now add the fact that Python&rsquo;s import order is as described: first goes Python&rsquo;s built-ins, then 3rd party libraries, and then internal code. As you can see, importing 3rd party libraries takes places before my import, so those libraries can - and often do - instantiate their loggers using code in top-level <code>__init__</code> files, effectively preceding my setup logging code.</p>
 <p>And that was exactly my case - imported 3rd party libraries instantiated their loggers before my service called logging setup, which in turn disabled those loggers permanently, due to default parameter value.</p>
 <p>The fix is simple: just set the parameter to desired value in JSON configuration. But the time wasted on debugging is, well, wasted. For those who just glance over post to see the answer, below you can see fixed configuration:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"> {
    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#ae81ff">1</span>,
    <span style="color:#f92672">&#34;formatters&#34;</span>: {<span style="color:#960050;background-color:#1e0010">...</span>},
    <span style="color:#f92672">&#34;handlers&#34;</span>: {

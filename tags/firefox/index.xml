@@ -6,10 +6,59 @@
     <description>Recent content in firefox on emkor&#39;s page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 May 2020 15:53:05 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 14 Dec 2021 16:12:07 +0100</lastBuildDate>
     
 	<atom:link href="https://www.emkor.eu/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Filtering news sources on the Web and avoiding filter bubble</title>
+      <link>https://www.emkor.eu/posts/filtering-non-credible-sources-on-web/</link>
+      <pubDate>Tue, 14 Dec 2021 16:12:07 +0100</pubDate>
+      
+      <guid>https://www.emkor.eu/posts/filtering-non-credible-sources-on-web/</guid>
+      <description>&lt;p&gt;Web search results has been dropping in terms of results quality and credibility for quite a while, mostly due to aggrresive SEO optimization done by scammy websites, which is becoming a common complain among engineers &lt;a href=&#34;https://news.ycombinator.com/item?id=27427330&#34;&gt;1&lt;/a&gt; &lt;a href=&#34;https://news.ycombinator.com/item?id=28113007&#34;&gt;2&lt;/a&gt;, who are usually power users of web search.&lt;/p&gt;
+&lt;p&gt;As a father with very limited amount of free time, the pain of scrolling and paging through lists of trashy search results for social/politics or other current affairs, repeatedly narrowing down search terms and losing precious minutes, especially on mobile devices, I always felt urge to find a way of filtering down those scammy / trashy websites.&lt;/p&gt;
+&lt;p&gt;My quick solution I developed recently, before &lt;a href=&#34;https://github.com/iorate/uBlacklist&#34;&gt;uBlacklist&lt;/a&gt; started trending (which looks really good, BTW!) is to use custom domain filters in search query, together with short keywords to make them easily accessible.&lt;/p&gt;
+&lt;h3 id=&#34;but-first-how-do-i-determine-whose-sources-are-credible&#34;&gt;But first, how do I determine whose sources are credible?&lt;/h3&gt;
+&lt;p&gt;Well, for enumerated matters - social, politics, current affairs - I suspect every reader already know some sources he/she/they trusts, but to avoid being completely isolated in own &lt;a href=&#34;https://en.wikipedia.org/wiki/Filter_bubble&#34;&gt;infromation bubble&lt;/a&gt;, I&amp;rsquo;d suggest using some (hopefully trustworthy) media charts. Personally, I use &lt;a href=&#34;https://adfontesmedia.com/static-mbc/&#34;&gt;Media Bias Chart by ad fontes media&lt;/a&gt;:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.emkor.eu/images/Media-Bias-Chart-8.0_Sept-2021-Unlicensed-Social-Media_Hi_Res-scaled.jpg&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;For next round of filtering sources, I&amp;rsquo;d suggest removal of those paywalled (implying you don&amp;rsquo;t have subscription bought for them).&lt;/p&gt;
+&lt;h3 id=&#34;using-search-queries-to-filter-trustworthy-domains&#34;&gt;Using search queries to filter trustworthy domains&lt;/h3&gt;
+&lt;p&gt;Popular search engines, including Google and DuckDuckGo, support query language allowing one to filter out domains from results. Query example with filtering looks like this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;inflation europe 2021 site:bbc.com OR site:politico.com OR site:axios.com OR site:nytimes.com OR site:usatoday.com OR site:wsj.com OR site:thehill.com OR site:washingtonpost.com OR site:guardian.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Typing all those domains every time would be tedious work, so I&amp;rsquo;m using parametrizable bookmarks in Firefox.&lt;/p&gt;
+&lt;h3 id=&#34;using-bookmarks-with-keyword-search&#34;&gt;Using bookmarks with keyword search&lt;/h3&gt;
+&lt;p&gt;In Firefox, we can parametrize phrase from bookmark URL using either &lt;code&gt;%s&lt;/code&gt; (for encoding phrases into URL) or &lt;code&gt;%S&lt;/code&gt; (direct replacement); for most human readable search phrases &lt;code&gt;%s&lt;/code&gt; is better.&lt;/p&gt;
+&lt;p&gt;So basically we need to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Perform first search with domain filter applied&lt;/li&gt;
+&lt;li&gt;Extract search URL&lt;/li&gt;
+&lt;li&gt;Replace phrase in URL with &lt;code&gt;%s&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add it as new bookmark with &lt;code&gt;&amp;lt;PREFERRED KEYWORD&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;This search query: &lt;code&gt;inflation europe 2021 site:bloomberg.com OR site:bbc.com OR site:politico.com OR site:axios.com OR site:nytimes.com OR site:usatoday.com OR site:wsj.com OR site:thehill.com OR site:washingtonpost.com OR site:guardian.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Results in URL: &lt;code&gt;https://www.google.com/search?q=inflation%20europe%202021+site%3Abloomberg.com+OR+site%3Abbc.com+OR+site%3Apolitico.com+OR+site%3Aaxios.com+OR+site%3Anytimes.com+OR+site%3Ausatoday.com+OR+site%3Awsj.com+OR+site%3Athehill.com+OR+site%3Awashingtonpost.com+OR+site%3Aguardian.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;After replacing phrase: &lt;code&gt;https://www.google.com/search?q=%s+site%3Abloomberg.com+OR+site%3Abbc.com+OR+site%3Apolitico.com+OR+site%3Aaxios.com+OR+site%3Anytimes.com+OR+site%3Ausatoday.com+OR+site%3Awsj.com+OR+site%3Athehill.com+OR+site%3Awashingtonpost.com+OR+site%3Aguardian.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Storing as bookmark:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.emkor.eu/images/bookmark_search.png&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This way, next time we search for credible sources, we just need to type in search/url bar &lt;code&gt;&amp;lt;PREFERRED KEYWORD&amp;gt; &amp;lt;PHRASE&amp;gt;&lt;/code&gt;, so the filter is applied. It works on mobile with Firefox Sync, too!&lt;/p&gt;
+&lt;h3 id=&#34;other-usages&#34;&gt;Other usages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;shortcut for GitHub search&lt;/li&gt;
+&lt;li&gt;shortcut for GoogleWebCache, InternetArchive&lt;/li&gt;
+&lt;li&gt;shortcut for ArchLinx User Repositories&lt;/li&gt;
+&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Enabling GPU acceleration in Firefox 76 under Ubuntu 20.04 with Wayland</title>
@@ -25,7 +74,7 @@
 &lt;p&gt;Now regarding the compositor: Wayland is still a little experimental, &amp;ldquo;glitches ahead&amp;rdquo; and all, but I&amp;rsquo;m using it for over a week now without any major issues or annoying hiccups. On plus side, it&amp;rsquo;s much smoother than x11 and allows for 4-finger gestures for switching workspaces - just like on macOS. Your mileage may vary, of course.&lt;/p&gt;
 &lt;p&gt;To start Wayland session, simply choose &amp;ldquo;Ubuntu on Wayland&amp;rdquo; on OS login screen (gear icon in bottom-right corner). From now on, Wayland is the default, until you switch to classic, x11-based compositor.&lt;/p&gt;
 &lt;p&gt;Second thing is support for VA-API on your OS. Ubuntu comes with default CLI utility, &lt;code&gt;vainfo&lt;/code&gt; (you can install it with &lt;code&gt;sudo apt-get install vainfo&lt;/code&gt;), just for the purpose of retrieving info on VA-API status. Your output should look like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;libva info: VA-API version 1.7.0
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;libva info: VA-API version 1.7.0
 libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
 libva info: Found init function __vaDriverInit_1_7
 libva info: va_openDriver() returns 0
@@ -51,16 +100,16 @@ vainfo: Supported profile and entrypoints
 &lt;p&gt;If your output lacks this information and you still believe your GPU is able to decode video with hardware support, visit &lt;a href=&#34;https://wiki.archlinux.org/index.php/Hardware_video_acceleration&#34;&gt;this Arch wiki&lt;/a&gt; for further instructions, having in mind that you use Debian-derivative OS, so commands and package names are different.&lt;/p&gt;
 &lt;h3 id=&#34;tweaking-firefox&#34;&gt;Tweaking Firefox&lt;/h3&gt;
 &lt;p&gt;Next step is to tell Firefox to use Wayland. Just edit (with sudo) its &lt;code&gt;/usr/share/applications/firefox.desktop&lt;/code&gt; file and prepend &lt;code&gt;firefox&lt;/code&gt; executable with specific flags, so such line:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Exec=firefox %u
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Exec=firefox %u
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;becomes&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Exec=env MOZ_ENABLE_WAYLAND=1 MOZ_WEBRENDER=1 MOZ_DBUS_REMOTE=1 firefox %u
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Exec=env MOZ_ENABLE_WAYLAND=1 MOZ_WEBRENDER=1 MOZ_DBUS_REMOTE=1 firefox %u
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and so on; &lt;strong&gt;repeat that for all 3 lines containing &lt;code&gt;Exec=&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Now restart Firefox and check if those flags actually work by going to &lt;code&gt;about:support&lt;/code&gt; and checking &lt;code&gt;Window protocol&lt;/code&gt; - its value should be &lt;code&gt;wayland&lt;/code&gt; (or similar), not &lt;code&gt;x11&lt;/code&gt;. If that&amp;rsquo;s not the case, please note that Firefox downloaded directly from Mozilla website instead of installed from PPA (which translates to &amp;ldquo;not installed with &lt;code&gt;apt-get&lt;/code&gt;&amp;quot;) might have trouble with using those flags you just pasted.&lt;/p&gt;
 &lt;p&gt;The last step is to enable few flags in Firefox config, so while being in the browser, go to &lt;code&gt;about:config&lt;/code&gt; URL and enable these flags by settings them to &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;widget.wayland-dmabuf-vaapi.enabled
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;widget.wayland-dmabuf-vaapi.enabled
 gfx.webrender.all
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and set this one below to &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;media.ffvpx.enabled
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;media.ffvpx.enabled
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;verification&#34;&gt;Verification&lt;/h3&gt;
 &lt;p&gt;Restart the browser. Now it&amp;rsquo;s time for one last verification that everything is correct: go to &lt;code&gt;about:support&lt;/code&gt; and verify those params:&lt;/p&gt;
 &lt;ul&gt;

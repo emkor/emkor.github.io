@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Mateusz Korzeniowski">
+    <meta name="description" content="Web search results has been dropping in terms of results quality and credibility for quite a while, mostly due to aggrresive SEO optimization done by scammy websites, which is becoming a common complain among engineers 1 2, who are usually power users of web search.
+As a father with very limited amount of free time, the pain of scrolling and paging through lists of trashy search results for social/politics or other current affairs, repeatedly narrowing down search terms and losing precious minutes, especially on mobile devices, I always felt urge to find a way of filtering down those scammy / trashy websites.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Filtering news sources on the Web and avoiding filter bubble"/>
+<meta name="twitter:description" content="Web search results has been dropping in terms of results quality and credibility for quite a while, mostly due to aggrresive SEO optimization done by scammy websites, which is becoming a common complain among engineers 1 2, who are usually power users of web search.
+As a father with very limited amount of free time, the pain of scrolling and paging through lists of trashy search results for social/politics or other current affairs, repeatedly narrowing down search terms and losing precious minutes, especially on mobile devices, I always felt urge to find a way of filtering down those scammy / trashy websites."/>
+
+    <meta property="og:title" content="Filtering news sources on the Web and avoiding filter bubble" />
+<meta property="og:description" content="Web search results has been dropping in terms of results quality and credibility for quite a while, mostly due to aggrresive SEO optimization done by scammy websites, which is becoming a common complain among engineers 1 2, who are usually power users of web search.
+As a father with very limited amount of free time, the pain of scrolling and paging through lists of trashy search results for social/politics or other current affairs, repeatedly narrowing down search terms and losing precious minutes, especially on mobile devices, I always felt urge to find a way of filtering down those scammy / trashy websites." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.emkor.eu/posts/filtering-non-credible-sources-on-web/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-14T16:12:07+01:00" />
+<meta property="article:modified_time" content="2021-12-14T16:12:07+01:00" />
+
+
+
+    
+      <base href="https://www.emkor.eu/posts/filtering-non-credible-sources-on-web/">
+    
+    <title>
+  Filtering news sources on the Web and avoiding filter bubble · emkor&#39;s page
+</title>
+
+    
+      <link rel="canonical" href="https://www.emkor.eu/posts/filtering-non-credible-sources-on-web/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.emkor.eu/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.emkor.eu/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.90.1" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      emkor&#39;s page
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.emkor.eu/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.emkor.eu/projects">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.emkor.eu/about">About</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Filtering news sources on the Web and avoiding filter bubble</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2021-12-14T16:12:07&#43;01:00'>
+                December 14, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="/tags/firefox/">firefox</a>
+      <span class="separator">•</span>
+    <a href="/tags/web/">web</a>
+      <span class="separator">•</span>
+    <a href="/tags/search/">search</a>
+      <span class="separator">•</span>
+    <a href="/tags/media/">media</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>Web search results has been dropping in terms of results quality and credibility for quite a while, mostly due to aggrresive SEO optimization done by scammy websites, which is becoming a common complain among engineers <a href="https://news.ycombinator.com/item?id=27427330">1</a> <a href="https://news.ycombinator.com/item?id=28113007">2</a>, who are usually power users of web search.</p>
+<p>As a father with very limited amount of free time, the pain of scrolling and paging through lists of trashy search results for social/politics or other current affairs, repeatedly narrowing down search terms and losing precious minutes, especially on mobile devices, I always felt urge to find a way of filtering down those scammy / trashy websites.</p>
+<p>My quick solution I developed recently, before <a href="https://github.com/iorate/uBlacklist">uBlacklist</a> started trending (which looks really good, BTW!) is to use custom domain filters in search query, together with short keywords to make them easily accessible.</p>
+<h3 id="but-first-how-do-i-determine-whose-sources-are-credible">But first, how do I determine whose sources are credible?</h3>
+<p>Well, for enumerated matters - social, politics, current affairs - I suspect every reader already know some sources he/she/they trusts, but to avoid being completely isolated in own <a href="https://en.wikipedia.org/wiki/Filter_bubble">infromation bubble</a>, I&rsquo;d suggest using some (hopefully trustworthy) media charts. Personally, I use <a href="https://adfontesmedia.com/static-mbc/">Media Bias Chart by ad fontes media</a>:</p>
+<figure><img src="/images/Media-Bias-Chart-8.0_Sept-2021-Unlicensed-Social-Media_Hi_Res-scaled.jpg"/>
+</figure>
+
+<p>For next round of filtering sources, I&rsquo;d suggest removal of those paywalled (implying you don&rsquo;t have subscription bought for them).</p>
+<h3 id="using-search-queries-to-filter-trustworthy-domains">Using search queries to filter trustworthy domains</h3>
+<p>Popular search engines, including Google and DuckDuckGo, support query language allowing one to filter out domains from results. Query example with filtering looks like this:</p>
+<p><code>inflation europe 2021 site:bbc.com OR site:politico.com OR site:axios.com OR site:nytimes.com OR site:usatoday.com OR site:wsj.com OR site:thehill.com OR site:washingtonpost.com OR site:guardian.com</code></p>
+<p>Typing all those domains every time would be tedious work, so I&rsquo;m using parametrizable bookmarks in Firefox.</p>
+<h3 id="using-bookmarks-with-keyword-search">Using bookmarks with keyword search</h3>
+<p>In Firefox, we can parametrize phrase from bookmark URL using either <code>%s</code> (for encoding phrases into URL) or <code>%S</code> (direct replacement); for most human readable search phrases <code>%s</code> is better.</p>
+<p>So basically we need to:</p>
+<ol>
+<li>Perform first search with domain filter applied</li>
+<li>Extract search URL</li>
+<li>Replace phrase in URL with <code>%s</code></li>
+<li>Add it as new bookmark with <code>&lt;PREFERRED KEYWORD&gt;</code></li>
+</ol>
+<p>Example:</p>
+<ol>
+<li>This search query: <code>inflation europe 2021 site:bloomberg.com OR site:bbc.com OR site:politico.com OR site:axios.com OR site:nytimes.com OR site:usatoday.com OR site:wsj.com OR site:thehill.com OR site:washingtonpost.com OR site:guardian.com</code></li>
+<li>Results in URL: <code>https://www.google.com/search?q=inflation%20europe%202021+site%3Abloomberg.com+OR+site%3Abbc.com+OR+site%3Apolitico.com+OR+site%3Aaxios.com+OR+site%3Anytimes.com+OR+site%3Ausatoday.com+OR+site%3Awsj.com+OR+site%3Athehill.com+OR+site%3Awashingtonpost.com+OR+site%3Aguardian.com</code></li>
+<li>After replacing phrase: <code>https://www.google.com/search?q=%s+site%3Abloomberg.com+OR+site%3Abbc.com+OR+site%3Apolitico.com+OR+site%3Aaxios.com+OR+site%3Anytimes.com+OR+site%3Ausatoday.com+OR+site%3Awsj.com+OR+site%3Athehill.com+OR+site%3Awashingtonpost.com+OR+site%3Aguardian.com</code></li>
+<li>Storing as bookmark:</li>
+</ol>
+<figure><img src="/images/bookmark_search.png"/>
+</figure>
+
+<p>This way, next time we search for credible sources, we just need to type in search/url bar <code>&lt;PREFERRED KEYWORD&gt; &lt;PHRASE&gt;</code>, so the filter is applied. It works on mobile with Firefox Sync, too!</p>
+<h3 id="other-usages">Other usages</h3>
+<ul>
+<li>shortcut for GitHub search</li>
+<li>shortcut for GoogleWebCache, InternetArchive</li>
+<li>shortcut for ArchLinx User Repositories</li>
+<li>etc.</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+
+    
+
+    
+
+  </body>
+
+</html>

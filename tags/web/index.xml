@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on emkor&#39;s page</title>
+    <link>https://www.emkor.eu/tags/web/</link>
+    <description>Recent content in web on emkor&#39;s page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Dec 2021 16:12:07 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.emkor.eu/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Filtering news sources on the Web and avoiding filter bubble</title>
+      <link>https://www.emkor.eu/posts/filtering-non-credible-sources-on-web/</link>
+      <pubDate>Tue, 14 Dec 2021 16:12:07 +0100</pubDate>
+      
+      <guid>https://www.emkor.eu/posts/filtering-non-credible-sources-on-web/</guid>
+      <description>&lt;p&gt;Web search results has been dropping in terms of results quality and credibility for quite a while, mostly due to aggrresive SEO optimization done by scammy websites, which is becoming a common complain among engineers &lt;a href=&#34;https://news.ycombinator.com/item?id=27427330&#34;&gt;1&lt;/a&gt; &lt;a href=&#34;https://news.ycombinator.com/item?id=28113007&#34;&gt;2&lt;/a&gt;, who are usually power users of web search.&lt;/p&gt;
+&lt;p&gt;As a father with very limited amount of free time, the pain of scrolling and paging through lists of trashy search results for social/politics or other current affairs, repeatedly narrowing down search terms and losing precious minutes, especially on mobile devices, I always felt urge to find a way of filtering down those scammy / trashy websites.&lt;/p&gt;
+&lt;p&gt;My quick solution I developed recently, before &lt;a href=&#34;https://github.com/iorate/uBlacklist&#34;&gt;uBlacklist&lt;/a&gt; started trending (which looks really good, BTW!) is to use custom domain filters in search query, together with short keywords to make them easily accessible.&lt;/p&gt;
+&lt;h3 id=&#34;but-first-how-do-i-determine-whose-sources-are-credible&#34;&gt;But first, how do I determine whose sources are credible?&lt;/h3&gt;
+&lt;p&gt;Well, for enumerated matters - social, politics, current affairs - I suspect every reader already know some sources he/she/they trusts, but to avoid being completely isolated in own &lt;a href=&#34;https://en.wikipedia.org/wiki/Filter_bubble&#34;&gt;infromation bubble&lt;/a&gt;, I&amp;rsquo;d suggest using some (hopefully trustworthy) media charts. Personally, I use &lt;a href=&#34;https://adfontesmedia.com/static-mbc/&#34;&gt;Media Bias Chart by ad fontes media&lt;/a&gt;:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.emkor.eu/images/Media-Bias-Chart-8.0_Sept-2021-Unlicensed-Social-Media_Hi_Res-scaled.jpg&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;For next round of filtering sources, I&amp;rsquo;d suggest removal of those paywalled (implying you don&amp;rsquo;t have subscription bought for them).&lt;/p&gt;
+&lt;h3 id=&#34;using-search-queries-to-filter-trustworthy-domains&#34;&gt;Using search queries to filter trustworthy domains&lt;/h3&gt;
+&lt;p&gt;Popular search engines, including Google and DuckDuckGo, support query language allowing one to filter out domains from results. Query example with filtering looks like this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;inflation europe 2021 site:bbc.com OR site:politico.com OR site:axios.com OR site:nytimes.com OR site:usatoday.com OR site:wsj.com OR site:thehill.com OR site:washingtonpost.com OR site:guardian.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Typing all those domains every time would be tedious work, so I&amp;rsquo;m using parametrizable bookmarks in Firefox.&lt;/p&gt;
+&lt;h3 id=&#34;using-bookmarks-with-keyword-search&#34;&gt;Using bookmarks with keyword search&lt;/h3&gt;
+&lt;p&gt;In Firefox, we can parametrize phrase from bookmark URL using either &lt;code&gt;%s&lt;/code&gt; (for encoding phrases into URL) or &lt;code&gt;%S&lt;/code&gt; (direct replacement); for most human readable search phrases &lt;code&gt;%s&lt;/code&gt; is better.&lt;/p&gt;
+&lt;p&gt;So basically we need to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Perform first search with domain filter applied&lt;/li&gt;
+&lt;li&gt;Extract search URL&lt;/li&gt;
+&lt;li&gt;Replace phrase in URL with &lt;code&gt;%s&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add it as new bookmark with &lt;code&gt;&amp;lt;PREFERRED KEYWORD&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;This search query: &lt;code&gt;inflation europe 2021 site:bloomberg.com OR site:bbc.com OR site:politico.com OR site:axios.com OR site:nytimes.com OR site:usatoday.com OR site:wsj.com OR site:thehill.com OR site:washingtonpost.com OR site:guardian.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Results in URL: &lt;code&gt;https://www.google.com/search?q=inflation%20europe%202021+site%3Abloomberg.com+OR+site%3Abbc.com+OR+site%3Apolitico.com+OR+site%3Aaxios.com+OR+site%3Anytimes.com+OR+site%3Ausatoday.com+OR+site%3Awsj.com+OR+site%3Athehill.com+OR+site%3Awashingtonpost.com+OR+site%3Aguardian.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;After replacing phrase: &lt;code&gt;https://www.google.com/search?q=%s+site%3Abloomberg.com+OR+site%3Abbc.com+OR+site%3Apolitico.com+OR+site%3Aaxios.com+OR+site%3Anytimes.com+OR+site%3Ausatoday.com+OR+site%3Awsj.com+OR+site%3Athehill.com+OR+site%3Awashingtonpost.com+OR+site%3Aguardian.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Storing as bookmark:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.emkor.eu/images/bookmark_search.png&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This way, next time we search for credible sources, we just need to type in search/url bar &lt;code&gt;&amp;lt;PREFERRED KEYWORD&amp;gt; &amp;lt;PHRASE&amp;gt;&lt;/code&gt;, so the filter is applied. It works on mobile with Firefox Sync, too!&lt;/p&gt;
+&lt;h3 id=&#34;other-usages&#34;&gt;Other usages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;shortcut for GitHub search&lt;/li&gt;
+&lt;li&gt;shortcut for GoogleWebCache, InternetArchive&lt;/li&gt;
+&lt;li&gt;shortcut for ArchLinx User Repositories&lt;/li&gt;
+&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

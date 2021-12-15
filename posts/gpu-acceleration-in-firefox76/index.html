@@ -21,8 +21,8 @@ This guide is a compilation of tips and tweaks from various sources, like Martin
 This guide is a compilation of tips and tweaks from various sources, like Martin Stransky&rsquo;s Blog, who is one of the Firefox developers, Arch wikis (1, 2) and some Reddit threads 1" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.emkor.eu/posts/gpu-acceleration-in-firefox76/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-05-06T15:53:05&#43;02:00" />
-<meta property="article:modified_time" content="2020-05-06T15:53:05&#43;02:00" />
+<meta property="article:published_time" content="2020-05-06T15:53:05+02:00" />
+<meta property="article:modified_time" content="2020-05-06T15:53:05+02:00" />
 
 
 
@@ -58,7 +58,7 @@ This guide is a compilation of tips and tweaks from various sources, like Martin
     <link rel="icon" type="image/png" href="https://www.emkor.eu/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://www.emkor.eu/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="generator" content="Hugo 0.90.1" />
   </head>
 
   
@@ -141,7 +141,7 @@ This guide is a compilation of tips and tweaks from various sources, like Martin
 <p>Now regarding the compositor: Wayland is still a little experimental, &ldquo;glitches ahead&rdquo; and all, but I&rsquo;m using it for over a week now without any major issues or annoying hiccups. On plus side, it&rsquo;s much smoother than x11 and allows for 4-finger gestures for switching workspaces - just like on macOS. Your mileage may vary, of course.</p>
 <p>To start Wayland session, simply choose &ldquo;Ubuntu on Wayland&rdquo; on OS login screen (gear icon in bottom-right corner). From now on, Wayland is the default, until you switch to classic, x11-based compositor.</p>
 <p>Second thing is support for VA-API on your OS. Ubuntu comes with default CLI utility, <code>vainfo</code> (you can install it with <code>sudo apt-get install vainfo</code>), just for the purpose of retrieving info on VA-API status. Your output should look like this:</p>
-<pre><code>libva info: VA-API version 1.7.0
+<pre tabindex="0"><code>libva info: VA-API version 1.7.0
 libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
 libva info: Found init function __vaDriverInit_1_7
 libva info: va_openDriver() returns 0
@@ -167,16 +167,16 @@ vainfo: Supported profile and entrypoints
 <p>If your output lacks this information and you still believe your GPU is able to decode video with hardware support, visit <a href="https://wiki.archlinux.org/index.php/Hardware_video_acceleration">this Arch wiki</a> for further instructions, having in mind that you use Debian-derivative OS, so commands and package names are different.</p>
 <h3 id="tweaking-firefox">Tweaking Firefox</h3>
 <p>Next step is to tell Firefox to use Wayland. Just edit (with sudo) its <code>/usr/share/applications/firefox.desktop</code> file and prepend <code>firefox</code> executable with specific flags, so such line:</p>
-<pre><code>Exec=firefox %u
+<pre tabindex="0"><code>Exec=firefox %u
 </code></pre><p>becomes</p>
-<pre><code>Exec=env MOZ_ENABLE_WAYLAND=1 MOZ_WEBRENDER=1 MOZ_DBUS_REMOTE=1 firefox %u
+<pre tabindex="0"><code>Exec=env MOZ_ENABLE_WAYLAND=1 MOZ_WEBRENDER=1 MOZ_DBUS_REMOTE=1 firefox %u
 </code></pre><p>and so on; <strong>repeat that for all 3 lines containing <code>Exec=</code>.</strong></p>
 <p>Now restart Firefox and check if those flags actually work by going to <code>about:support</code> and checking <code>Window protocol</code> - its value should be <code>wayland</code> (or similar), not <code>x11</code>. If that&rsquo;s not the case, please note that Firefox downloaded directly from Mozilla website instead of installed from PPA (which translates to &ldquo;not installed with <code>apt-get</code>&quot;) might have trouble with using those flags you just pasted.</p>
 <p>The last step is to enable few flags in Firefox config, so while being in the browser, go to <code>about:config</code> URL and enable these flags by settings them to <code>true</code>:</p>
-<pre><code>widget.wayland-dmabuf-vaapi.enabled
+<pre tabindex="0"><code>widget.wayland-dmabuf-vaapi.enabled
 gfx.webrender.all
 </code></pre><p>and set this one below to <code>false</code>:</p>
-<pre><code>media.ffvpx.enabled
+<pre tabindex="0"><code>media.ffvpx.enabled
 </code></pre><h3 id="verification">Verification</h3>
 <p>Restart the browser. Now it&rsquo;s time for one last verification that everything is correct: go to <code>about:support</code> and verify those params:</p>
 <ul>
